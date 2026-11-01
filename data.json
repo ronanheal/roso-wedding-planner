@@ -2085,7 +2085,7 @@
  },
  "settings": {
   "assumeLevel": "medium",
-  "buffer": 10,
+  "buffer": 15,
   "perLevel": {
    "heavy": 10,
    "light": 3,
