@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>RoSo Wedding Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<style>
+/* Layout: spreadsheet-plain workspace (white, grey gridlines, blue selection), floor plan + guest grid + drinks as tabs */
+:root {
+  --bg: #F9FBFD; --surface: #FFFFFF; --sunk: #F1F3F4; --ink: #1F1F1F; --muted: #5F6368; --line: #E1E3E1;
+  --accent: #0B57D0; --accent-ink: #FFFFFF; --accent-soft: #C2E7FF; --accent-soft-ink: #001D35; --sel: #D3E3FD;
+  --table: #E8EAED; --table-line: #BDC1C6;
+  --good: #137333; --warn: #B06000; --bad: #C5221F;
+  --rfam: #8E4EC6; --rfri: #1E8E3E; --radd: #757575; --sfam: #D01884; --sfri: #1A73E8; --sadd: #E37400; --cfri: #5F7C8A;
+  --display: "Roboto", Arial, sans-serif;
+  --body: "Roboto", Arial, sans-serif;
+  --radius: 4px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1B1B1B; --surface: #202124; --sunk: #2A2B2E; --ink: #E3E3E3; --muted: #9AA0A6; --line: #3C4043;
+  --accent: #A8C7FA; --accent-ink: #062E6F; --accent-soft: #004A77; --accent-soft-ink: #C2E7FF; --sel: #0B3A6E;
+  --table: #3C4043; --table-line: #5F6368;
+  --good: #81C995; --warn: #FDD663; --bad: #F28B82;
+  --rfam: #D7AEFB; --rfri: #81C995; --radd: #BDC1C6; --sfam: #FF8BCB; --sfri: #8AB4F8; --sadd: #FCAD70; --cfri: #A7C0CD;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #1B1B1B; --surface: #202124; --sunk: #2A2B2E; --ink: #E3E3E3; --muted: #9AA0A6; --line: #3C4043;
+  --accent: #A8C7FA; --accent-ink: #062E6F; --accent-soft: #004A77; --accent-soft-ink: #C2E7FF; --sel: #0B3A6E;
+  --table: #3C4043; --table-line: #5F6368;
+  --good: #81C995; --warn: #FDD663; --bad: #F28B82;
+  --rfam: #D7AEFB; --rfri: #81C995; --radd: #BDC1C6; --sfam: #FF8BCB; --sfri: #8AB4F8; --sadd: #FCAD70; --cfri: #A7C0CD;
+  color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 14px; line-height: 1.45; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--bg); border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 10px; }
+.brand { font-family: var(--display); font-size: 20px; font-weight: 400; line-height: 1; display: flex; align-items: center; gap: 10px; }
+.brand small { font-family: var(--body); font-size: 13px; color: var(--muted); }
+nav.tabs { display: flex; gap: 2px; margin-left: auto; }
+nav.tabs button { border: 0; background: transparent; padding: 7px 16px; border-radius: 999px; font-weight: 500; color: var(--muted); }
+nav.tabs button:hover { background: var(--sunk); }
+nav.tabs button[aria-selected="true"] { background: var(--sel); color: var(--accent); }
+.status { font-size: 12px; color: var(--muted); }
+
+main .wrap { padding-block: 16px 48px; }
+.btn { border: 1px solid #C4C7C5; background: var(--surface); padding: 6px 14px; border-radius: 999px; font-weight: 500; color: var(--accent); }
+.btn:hover { background: var(--sunk); }
+.btn.primary { background: var(--accent-soft); color: var(--accent-soft-ink); border-color: var(--accent-soft); }
+.btn.primary:hover { filter: brightness(0.96); }
+.btn.danger { color: var(--bad); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.toolbar .spacer { flex: 1; }
+.label { font-size: 12px; color: var(--muted); font-weight: 500; }
+select, input[type="text"], input[type="number"], input[type="search"] { border: 1px solid #C4C7C5; background: var(--surface); border-radius: 4px; padding: 5px 8px; min-width: 0; }
+input[type="search"] { border-radius: 999px; background: var(--sunk); border-color: transparent; padding-inline: 14px; }
+input[type="number"] { width: 70px; font-variant-numeric: tabular-nums; }
+.empty { padding: 48px 16px; text-align: center; color: var(--muted); }
+.empty h2 { font-family: var(--display); font-weight: 500; font-size: 22px; color: var(--ink); margin: 0 0 6px; }
+.note { font-size: 12px; color: var(--muted); }
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-size: 13px; z-index: 50; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.show { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+
+/* ---------- Seating ---------- */
+.seating { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 860px) { .seating { grid-template-columns: minmax(0, 1fr); } }
+aside.pool { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 64px); max-height: calc(100vh - 90px); overflow: auto; }
+@media (max-width: 860px) { aside.pool { position: static; max-height: 300px; } }
+aside.pool.drop-hot { outline: 2px dashed var(--accent); }
+.pool h3 { margin: 0 0 8px; font-family: var(--display); font-weight: 500; font-size: 16px; display: flex; align-items: baseline; gap: 8px; }
+.pool h3 span { font-family: var(--body); font-size: 12px; color: var(--muted); }
+.pool .group { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.pool input[type="search"] { width: 100%; }
+
+.floor-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.floor { min-width: 1000px; padding: 16px 20px 24px; display: flex; flex-direction: column; gap: 22px; }
+.floor-cap { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+.bridal { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.bridal .seats { display: grid; grid-auto-flow: column; grid-auto-columns: 92px; gap: 4px; }
+.bridal .bar { height: 18px; width: 100%; max-width: 980px; background: var(--table); border: 1px solid var(--table-line); border-radius: 3px; display: grid; place-items: center; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.longs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.long { display: grid; grid-template-columns: minmax(0,1fr) 26px minmax(0,1fr); column-gap: 4px; row-gap: 4px; align-content: start; }
+.long .head { grid-column: 1 / -1; text-align: center; margin-bottom: 4px; }
+.long .head b { font-family: var(--display); font-weight: 500; font-size: 14px; }
+.long .head div { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.long .endrow { grid-column: 1 / -1; display: flex; justify-content: center; }
+.long .endrow .seat { width: calc(50% - 15px); }
+.tbar { background: var(--table); border-left: 1px solid var(--table-line); border-right: 1px solid var(--table-line); position: relative; }
+.tbar.first { border-top: 1px solid var(--table-line); border-radius: 3px 3px 0 0; }
+.tbar.last { border-bottom: 1px solid var(--table-line); border-radius: 0 0 3px 3px; }
+.tbar.seg { border-top: 2px solid var(--table-line); }
+.tbar .tn { position: absolute; top: 2px; left: 0; right: 0; text-align: center; font-size: 10px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.seat { min-height: 30px; border-radius: 999px; border: 1px dashed #C4C7C5; display: flex; align-items: stretch; background: var(--bg); min-width: 0; }
+.seat:empty::after { content: ""; flex: 1; }
+.seat.hot { border-color: var(--accent); border-style: solid; background: var(--sel); }
+.seat.target { border-color: var(--accent); }
+.chip { --c: var(--muted); display: flex; align-items: center; gap: 5px; padding: 4px 9px; border-radius: 999px; background: color-mix(in srgb, var(--c) 20%, var(--surface)); color: color-mix(in srgb, var(--c) 55%, var(--ink)); border: 0; font-size: 12.5px; line-height: 1.2; cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none; min-width: 0; flex: 1; }
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); flex: none; }
+.chip .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1; }
+.chip .bd { font-size: 9.5px; font-weight: 700; letter-spacing: 0.04em; opacity: 0.75; flex: none; }
+.chip .lk { font-size: 10px; flex: none; color: var(--muted); }
+.chip.sel { outline: 2px solid var(--accent); outline-offset: 1px; }
+.chip.dim { opacity: 0.35; }
+.ghost { position: fixed; z-index: 60; pointer-events: none; box-shadow: 0 6px 18px rgb(0 0 0 / 0.25); width: 130px; transform: translate(-50%, -60%); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.legend i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; margin-bottom: 12px; }
+.panel h4 { margin: 0 0 10px; font-family: var(--display); font-weight: 500; font-size: 16px; }
+.panel .row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.check { display: inline-flex; align-items: center; gap: 6px; }
+.check small { color: var(--muted); }
+.opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px 18px; }
+.opts label { display: flex; gap: 8px; align-items: flex-start; }
+.opts label span b { display: block; font-weight: 500; }
+.opts label span small { color: var(--muted); }
+.plans { display: flex; flex-direction: column; gap: 6px; }
+.plan { display: flex; gap: 10px; align-items: center; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; flex-wrap: wrap; }
+.plan b { font-weight: 500; }
+.plan .note { flex: 1; }
+.detail { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.detail .nm { font-family: var(--display); font-size: 18px; font-weight: 500; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 500; background: var(--sunk); color: var(--muted); white-space: nowrap; }
+.pill.good { background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }
+.pill.warn { background: color-mix(in srgb, var(--warn) 18%, transparent); color: var(--warn); }
+.pill.bad { background: color-mix(in srgb, var(--bad) 16%, transparent); color: var(--bad); }
+.apart-list { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ---------- Tables (guests + budget) ---------- */
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 0; }
+table.grid { border-collapse: collapse; width: 100%; font-size: 13px; }
+table.grid th { text-align: left; font-size: 12px; color: var(--ink); font-weight: 700; padding: 6px 8px; border: 1px solid var(--line); background: var(--sunk); position: sticky; top: 0; white-space: nowrap; }
+table.grid td { padding: 3px 6px; border: 1px solid var(--line); vertical-align: middle; }
+table.grid tbody tr:hover td { background: color-mix(in srgb, var(--sel) 45%, transparent); }
+table.grid tr:last-child td { border-bottom: 0; }
+table.grid td.num, table.grid th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.grid input[type="text"] { width: 100%; min-width: 90px; border-color: transparent; background: transparent; }
+table.grid input[type="text"]:hover, table.grid input[type="text"]:focus { border-color: var(--line); background: var(--surface); }
+table.grid select { border-color: transparent; background: transparent; }
+table.grid select:hover, table.grid select:focus { border-color: var(--line); }
+table.grid tr.off td { opacity: 0.55; }
+table.grid tfoot td { font-weight: 600; background: var(--sunk); }
+.seg-ctl { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg-ctl button { border: 0; background: transparent; padding: 3px 7px; font-size: 12px; color: var(--muted); }
+.seg-ctl button + button { border-left: 1px solid var(--line); }
+.seg-ctl button[aria-pressed="true"] { background: var(--sel); color: var(--accent); font-weight: 500; }
+.togs { display: flex; flex-wrap: wrap; gap: 3px; min-width: 260px; }
+.tog { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 1px 7px; font-size: 11.5px; color: var(--muted); }
+.tog[aria-pressed="true"] { background: var(--sel); border-color: var(--accent); color: var(--accent); }
+.namecell { display: flex; align-items: center; gap: 6px; min-width: 170px; }
+.namecell .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); flex: none; }
+
+/* ---------- Drinks ---------- */
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+@media (max-width: 760px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
+.tile .v { font-family: var(--display); font-size: 26px; font-weight: 500; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile .s { font-size: 12px; color: var(--muted); }
+.drinks-grid { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 16px; align-items: start; margin-bottom: 16px; }
+@media (max-width: 900px) { .drinks-grid { grid-template-columns: minmax(0, 1fr); } }
+.ctl { display: grid; gap: 14px; }
+.ctl .line { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; }
+.ctl input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); }
+.bars { display: grid; gap: 2px; }
+.mini { height: 6px; background: var(--sunk); border-radius: 3px; position: relative; overflow: hidden; min-width: 80px; }
+.mini i { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 3px; }
+.mini b { position: absolute; top: -2px; bottom: -2px; width: 2px; background: var(--ink); }
+h2.sec { font-family: var(--display); font-weight: 500; font-size: 18px; margin: 18px 0 8px; }
+.keybar { background: var(--sel); border-bottom: 1px solid var(--line); }
+.keybar .wrap { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; padding-block: 8px; font-size: 13px; }
+.keybar input { min-width: 220px; flex: 1; max-width: 360px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Ronan &amp; Sophia<small>Wedding planner</small></div>
+    <span class="status" id="status">Loading…</span>
+    <button class="btn" id="keyBtn" data-act="keyPanel">Edit access</button>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="seating" aria-selected="true">Seating</button>
+      <button role="tab" data-tab="guests" aria-selected="false">Guests</button>
+      <button role="tab" data-tab="drinks" aria-selected="false">Drinks</button>
+    </nav>
+  </div>
+</header>
+<div class="keybar" id="keybar" hidden></div>
+<main><div class="wrap" id="view">
+  <div class="empty"><h2>Loading your guest list</h2><p>Guests, seating plans and the drinks budget appear here once the data loads.</p></div>
+</div></main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+"use strict";
+const CATS = ["Ronan's Family","Ronan's Friends","Ronan's Additional","Sophia's Family","Sophia's Friends","Sophia's Additional","Couple Friends"];
+const CATVAR = {"Ronan's Family":"--rfam","Ronan's Friends":"--rfri","Ronan's Additional":"--radd","Sophia's Family":"--sfam","Sophia's Friends":"--sfri","Sophia's Additional":"--sadd","Couple Friends":"--cfri"};
+const side = c => c && c.startsWith("Ronan") ? "R" : c && c.startsWith("Sophia") ? "S" : "C";
+const TYPES = ["Sparkling","Beer","White wine","Rosé","Red wine","Cocktail","Spirits","Non-alcoholic"];
+const TYPESHORT = {"Sparkling":"Bubbles","Beer":"Beer","White wine":"White","Rosé":"Rosé","Red wine":"Red","Cocktail":"Cocktail","Spirits":"Spirits","Non-alcoholic":"0%"};
+const LEVELS = [["","—"],["none","None"],["light","Light"],["medium","Med"],["heavy","Heavy"]];
+const ROLES = {"":"Guest",groom:"Groom",bride:"Bride",groomsman:"Groomsman",bridesmaid:"Bridesmaid","bride-parent":"Bride's parent","groom-parent":"Groom's parent"};
+const GENDERS = [["","—"],["F","F"],["M","M"],["X","Other"]];
+const TRANSPORT = ["","Both","To the Venue","From the Venue","Neither"];
+const LONG = [{id:"L1",first:1},{id:"L2",first:4},{id:"L3",first:7},{id:"L4",first:10}];
+const DEFAULT_CONFIG = {bridal:10, L1:{side:12,top:false,bottom:false}, L2:{side:12,top:false,bottom:false}, L3:{side:12,top:false,bottom:false}, L4:{side:12,top:false,bottom:false}};
+const DEFAULT_OPTS = {couples:true, clusters:true, mixSides:false, familyFront:true, apart:true};
+const DEFAULT_SETTINGS = {perLevel:{light:3,medium:6,heavy:10}, assumeLevel:"medium", toast:true, thirst:100, buffer:10};
+
+const S = {
+  ready:false, canWrite:false, keyPanel:false, keyMsg:"",
+  guests:new Map(), seating:null, plans:[], budget:[], settings:null,
+  loaded:{guests:false, seating:false, plans:false, budget:false, settings:false},
+  tab:"seating", selected:null, colorBy:"tag", poolSearch:"", panel:null, confirm:null,
+  gSearch:"", gCat:"", gMissing:"", pendingRender:false
+};
+const $ = (sel, el=document) => el.querySelector(sel);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money = n => "$" + Math.round(n).toLocaleString("en-NZ");
+const fmt = n => Math.round(n).toLocaleString("en-NZ");
+let toastT;
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2200); }
+function setStatus(msg){ $("#status").textContent = msg; }
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+
+/* ---------- Data helpers ---------- */
+const attending = () => [...S.guests.entries()].filter(([,g]) => g.rsvp !== "No").map(([id,g]) => ({id, ...g})).sort((a,b)=>(a.order??999)-(b.order??999));
+function shortName(n){ const p=n.trim().split(/\s+/); return p.length>1 ? p[0]+" "+p[p.length-1][0] : p[0]; }
+function dietTag(d){ d=(d||"").toLowerCase(); if(!d) return ""; const t=[];
+  if(d.includes("coeliac")) t.push("CO"); else if(d.includes("gluten")) t.push("GF");
+  if(d.includes("dairy")) t.push("DF"); if(d.includes("nut")) t.push("NUT"); if(d.includes("vegetarian")) t.push("VEG"); if(d.includes("pescatarian")) t.push("PES");
+  return t.join(" ") || "DIET"; }
+const cfg = () => ({...DEFAULT_CONFIG, ...(S.seating?.config||{})});
+function segOf(i,n){ return i < Math.round(n/3) ? 0 : i < Math.round(2*n/3) ? 1 : 2; }
+function seatList(c=cfg()){
+  const out=[];
+  for(let i=0;i<c.bridal;i++) out.push({id:`B-${i}`, t:"B", table:"Bridal", idx:i});
+  for(const L of LONG){ const t={...DEFAULT_CONFIG[L.id], ...(c[L.id]||{})};
+    if(t.top) out.push({id:`${L.id}-top`, t:L.id, side:"end", seg:0, table:L.first});
+    for(const sd of ["a","b"]) for(let i=0;i<t.side;i++) out.push({id:`${L.id}-${sd}-${i}`, t:L.id, side:sd, idx:i, seg:segOf(i,t.side), table:L.first+segOf(i,t.side)});
+    if(t.bottom) out.push({id:`${L.id}-bot`, t:L.id, side:"end", seg:2, table:L.first+2});
+  }
+  return out;
+}
+function seatsMap(){ return S.seating?.seats || {}; }
+function guestSeat(){ const m={}; for(const [s,g] of Object.entries(seatsMap())) m[g]=s; return m; }
+function seatInfo(id){ return seatList().find(s=>s.id===id); }
+function seatLabel(id){ const s=seatInfo(id); if(!s) return ""; return s.t==="B" ? "Bridal table" : `Table ${s.table}`; }
+function colorFor(g){
+  switch(S.colorBy){
+    case "side": return side(g.category)==="R" ? "var(--rfam)" : side(g.category)==="S" ? "var(--sfam)" : "var(--cfri)";
+    case "level": return {none:"var(--radd)", light:"var(--rfri)", medium:"var(--cfri)", heavy:"var(--sadd)"}[g.level] || "var(--line)";
+    case "diet": return g.dietary ? "var(--bad)" : "var(--line)";
+    case "gender": return {F:"var(--sfam)", M:"var(--rfam)", X:"var(--cfri)"}[g.gender] || "var(--line)";
+    default: return `var(${CATVAR[g.category]||"--muted"})`;
+  }
+}
+function legendItems(){
+  switch(S.colorBy){
+    case "side": return [["Ronan's side","var(--rfam)"],["Sophia's side","var(--sfam)"],["Couple friends","var(--cfri)"]];
+    case "level": return [["Non-drinker","var(--radd)"],["Light","var(--rfri)"],["Medium","var(--cfri)"],["Heavy","var(--sadd)"],["Not set","var(--line)"]];
+    case "diet": return [["Dietary requirement","var(--bad)"],["None","var(--line)"]];
+    case "gender": return [["F","var(--sfam)"],["M","var(--rfam)"],["Other","var(--cfri)"],["Not set","var(--line)"]];
+    default: return CATS.map(c=>[c,`var(${CATVAR[c]})`]);
+  }
+}
+
+/* ---------- Storage: data.json on the repo's "data" branch ---------- */
+const GH = {owner:"ronanheal", repo:"roso-wedding-planner", branch:"data", path:"data.json"};
+const API = `https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${GH.path}`;
+const Store = {remote:null, sha:null, pending:[], saving:false, key:"", timer:null};
+const clone = o => o===undefined ? undefined : JSON.parse(JSON.stringify(o));
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+function readKey(){ try{ return localStorage.getItem("roso-edit-key")||""; }catch{ return ""; } }
+function writeKey(k){ try{ k ? localStorage.setItem("roso-edit-key",k) : localStorage.removeItem("roso-edit-key"); }catch{} }
+function applyOps(base, ops){
+  for(const {p,v} of ops){ let o=base;
+    for(let i=0;i<p.length-1;i++){ if(typeof o[p[i]]!=="object" || o[p[i]]===null) o[p[i]]={}; o=o[p[i]]; }
+    if(v===undefined) delete o[p[p.length-1]]; else o[p[p.length-1]]=clone(v); }
+  return base;
+}
+function b64encode(str){ const bytes=new TextEncoder().encode(str); let bin=""; for(let i=0;i<bytes.length;i+=0x8000) bin+=String.fromCharCode.apply(null, bytes.subarray(i,i+0x8000)); return btoa(bin); }
+function b64decode(b64){ const bin=atob(b64.replace(/\s/g,"")); return new TextDecoder().decode(Uint8Array.from(bin, c=>c.charCodeAt(0))); }
+function ghHeaders(key=Store.key){ const h={"Accept":"application/vnd.github+json"}; if(key) h.Authorization="Bearer "+key; return h; }
+async function pull(key=Store.key){
+  const r=await fetch(`${API}?ref=${GH.branch}&t=${Date.now()}`, {headers:ghHeaders(key), cache:"no-store"});
+  if(r.status===401) throw {code:"badkey"};
+  if(!r.ok) throw {code:"http", status:r.status};
+  const j=await r.json();
+  return {sha:j.sha, data:JSON.parse(b64decode(j.content))};
+}
+function syncFromData(){
+  const d = Store.remote ? applyOps(clone(Store.remote), Store.pending) : {};
+  S.guests=new Map(Object.entries(d.guests||{}));
+  const sc=d.seating||{};
+  S.seating={config:{...DEFAULT_CONFIG,...(sc.config||{})}, seats:sc.seats||{}, locked:sc.locked||{}, apart:sc.apart||[], opts:{...DEFAULT_OPTS,...(sc.opts||{})}};
+  S.plans=Object.entries(d.plans||{}).map(([id,p])=>({id,...p})).sort((a,b)=>String(b.savedAt).localeCompare(String(a.savedAt)));
+  S.budget=Object.entries(d.budget||{}).map(([id,l])=>({id,...l})).sort((a,b)=>(a.order??0)-(b.order??0));
+  S.settings=d.settings||{...DEFAULT_SETTINGS};
+}
+function op(path, value){
+  if(!S.canWrite){ syncFromData(); render(); toast("You're in view-only mode. Use Edit access to unlock changes."); return; }
+  Store.pending.push({p:path, v:clone(value)}); syncFromData(); render(); scheduleSave();
+}
+function scheduleSave(){ setStatus("Unsaved changes"); clearTimeout(Store.timer); Store.timer=setTimeout(flush, 1200); }
+async function flush(){
+  if(!Store.key || Store.saving || !Store.pending.length) return;
+  Store.saving=true; setStatus("Saving…");
+  const n=Store.pending.length, ops=Store.pending.slice(0,n);
+  let ok=false;
+  for(let attempt=0; attempt<4 && !ok; attempt++){
+    try{
+      if(attempt>0){ const f=await pull(); Store.remote=f.data; Store.sha=f.sha; }
+      const next=applyOps(clone(Store.remote), ops);
+      const r=await fetch(API, {method:"PUT", headers:{...ghHeaders(),"Content-Type":"application/json"},
+        body:JSON.stringify({message:"Planner update", content:b64encode(JSON.stringify(next,null,1)+"\n"), sha:Store.sha, branch:GH.branch})});
+      if(r.status===409 || r.status===422) continue;
+      if(r.status===401 || r.status===403 || r.status===404) throw {code:"badkey"};
+      if(!r.ok) throw {code:"http", status:r.status};
+      const j=await r.json(); Store.sha=j.content.sha; Store.remote=next; Store.pending.splice(0,n); ok=true;
+    }catch(e){
+      if(e && e.code==="badkey"){ Store.saving=false; keyFailed(); return; }
+      await sleep(800*(attempt+1));
+    }
+  }
+  Store.saving=false;
+  if(ok){ if(Store.pending.length) scheduleSave(); else setStatus("All changes saved"); }
+  else { setStatus("Couldn't save, retrying…"); clearTimeout(Store.timer); Store.timer=setTimeout(flush, 5000); }
+}
+async function poll(){
+  if(document.hidden || Store.saving || Store.pending.length) return;
+  try{ const f=await pull(); if(f.sha!==Store.sha){ Store.remote=f.data; Store.sha=f.sha; syncFromData(); render(); } }catch(e){ if(e && e.code==="badkey") keyFailed(); }
+}
+function keyFailed(){
+  writeKey(""); Store.key=""; S.canWrite=false; S.keyPanel=true;
+  S.keyMsg="That edit key doesn't work (it may have expired). Paste a new one to keep editing. Unsaved changes are kept until you leave the page.";
+  setStatus("View only"); render();
+}
+async function useKey(k){
+  k=(k||"").trim(); if(!k) return;
+  try{ await pull(k); }catch(e){ S.keyMsg = e && e.code==="badkey" ? "GitHub didn't accept that key. Check it was copied in full." : "Couldn't reach GitHub. Check your connection and try again."; renderKeybar(); return; }
+  Store.key=k; writeKey(k); S.canWrite=true; S.keyPanel=false; S.keyMsg="";
+  setStatus(Store.pending.length?"Unsaved changes":"You can edit"); render(); if(Store.pending.length) flush();
+}
+function writeFail(){ toast("Couldn't save that change."); }
+async function updateGuest(id, patch){ for(const [k,v] of Object.entries(patch)) op(["guests",id,k], v); }
+function saveSeating(){ op(["seating"], S.seating); }
+function saveSettings(){ op(["settings"], S.settings); }
+async function updateLine(id, patch){ for(const [k,v] of Object.entries(patch)) op(["budget",id,k], v); }
+function editorLink(){ return location.origin+location.pathname+"#key="+encodeURIComponent(Store.key); }
+function viewLink(){ return location.origin+location.pathname; }
+async function copyText(t, msg){ try{ await navigator.clipboard.writeText(t); toast(msg); }catch{ const i=document.getElementById("keyLink"); if(i){ i.value=t; i.hidden=false; i.select(); } toast("Copy the link from the box"); } }
+function renderKeybar(){
+  const kb=$("#keybar"); kb.hidden=!S.keyPanel;
+  $("#keyBtn").textContent = S.canWrite ? "Share / edit access" : "Edit access";
+  if(!S.keyPanel) return;
+  kb.innerHTML = S.canWrite ? `<div class="wrap"><span>You can edit on this device. Send the editor link only to people who should make changes.</span>
+      <button class="btn primary" data-act="copyEditor">Copy editor link</button><button class="btn" data-act="copyView">Copy view-only link</button>
+      <button class="btn danger" data-act="forgetKey">Remove key from this device</button><input type="text" id="keyLink" hidden readonly aria-label="Link to copy"></div>`
+    : `<div class="wrap"><span>${esc(S.keyMsg || "You're viewing. Paste the edit key, or open the editor link you were sent, to make changes.")}</span>
+      <input type="password" id="keyInput" placeholder="Edit key" autocomplete="off" aria-label="Edit key"><button class="btn primary" data-act="useKey">Unlock editing</button></div>`;
+}
+
+/* ---------- Seating actions ---------- */
+function moveGuest(gid, toSeat){
+  const seats=S.seating.seats; const from=guestSeat()[gid];
+  if(from===toSeat) return;
+  const occ = toSeat ? seats[toSeat] : null;
+  if(from) delete seats[from];
+  if(toSeat){ if(occ && from) seats[from]=occ; seats[toSeat]=gid; }
+  saveSeating();
+}
+function toggleLock(gid){ const l=S.seating.locked||(S.seating.locked={}); if(l[gid]) delete l[gid]; else l[gid]=true; saveSeating(); }
+
+function randomise(){
+  const o={...DEFAULT_OPTS, ...(S.seating.opts||{})};
+  const locked=S.seating.locked||{};
+  const all=attending(); const byId=new Map(all.map(g=>[g.id,g]));
+  const seats={};
+  for(const [s,g] of Object.entries(S.seating.seats)) if(locked[g] && byId.has(g)) seats[s]=g;
+  const placed=new Set(Object.values(seats));
+  // units: households of guests still to place
+  const free=all.filter(g=>!placed.has(g.id));
+  let units=[];
+  if(o.couples){ const m=new Map(); for(const g of free){ const k=g.household||g.id; if(!m.has(k)) m.set(k,[]); m.get(k).push(g); } units=[...m.values()]; }
+  else units=free.map(g=>[g]);
+  shuffle(units);
+  const catOrder=shuffle([...CATS]);
+  if(o.familyFront) catOrder.sort((a,b)=>(b.includes("Family")?1:0)-(a.includes("Family")?1:0));
+  const rank=u=>{ const counts={}; u.forEach(g=>counts[g.category]=(counts[g.category]||0)+1); const c=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0][0]; return catOrder.indexOf(c); };
+  if(o.clusters || o.familyFront) units.sort((a,b)=>rank(a)-rank(b));
+  const unitSide=u=>side(u[0].category);
+  let pools;
+  if(o.mixSides){ const R=units.filter(u=>unitSide(u)==="R"), Sp=units.filter(u=>unitSide(u)==="S"), C=units.filter(u=>unitSide(u)==="C"); (R.length<=Sp.length?R:Sp).push(...C); pools=[R,Sp]; }
+  else pools=[units];
+  // runs: each side of each physical table (one 2430mm table) is a run, front tables first, ends last
+  const c=cfg(); const list=seatList(c).filter(s=>s.t!=="B");
+  const runs=[];
+  for(let seg=0;seg<3;seg++) for(const L of LONG) for(const sd of ["a","b"]){
+    const r=list.filter(s=>s.t===L.id && s.side===sd && s.seg===seg).sort((a,b)=>a.idx-b.idx);
+    let cur=[]; for(const s of r){ if(seats[s.id]){ if(cur.length) runs.push(cur); cur=[]; } else cur.push(s.id); } if(cur.length) runs.push(cur);
+  }
+  for(const s of list.filter(s=>s.side==="end" && !seats[s.id])) runs.push([s.id]);
+  let ri=0;
+  for(const run of runs){
+    let pool = pools.length>1 ? pools[ri%2] : pools[0]; if(!pool.length) pool = pools.find(p=>p.length) || pool; ri++;
+    let room=run.length, pos=0;
+    while(room>0 && pool.length){
+      let k=pool.findIndex((u,i)=>i<6 && u.length<=room);
+      if(k<0) k=0;
+      const u=pool[k];
+      const take=u.splice(0, Math.min(room,u.length));
+      take.forEach(g=>{ seats[run[pos++]]=g.id; }); room-=take.length;
+      if(!u.length) pool.splice(k,1);
+      if(!pool.length && pools.length>1) pool = pools.find(p=>p.length) || pool;
+    }
+  }
+  if(o.apart) fixApart(seats, locked);
+  S.seating.seats=seats; saveSeating();
+  const left=attending().filter(g=>!Object.values(seats).includes(g.id)).length;
+  toast(left ? `Shuffled. ${left} guests didn't fit, so add seats in Table setup.` : "Shuffled a new layout");
+}
+function tableOf(seatId){ const s=seatInfo(seatId); return s ? (s.t==="B" ? 0 : s.table) : -1; }
+function fixApart(seats, locked){
+  const pairs=S.seating.apart||[]; if(!pairs.length) return;
+  for(let n=0;n<80;n++){
+    const where={}; for(const [s,g] of Object.entries(seats)) where[g]=s;
+    const bad=pairs.find(([a,b])=>where[a] && where[b] && tableOf(where[a])===tableOf(where[b]));
+    if(!bad) return;
+    const mover = !locked[bad[1]] ? bad[1] : !locked[bad[0]] ? bad[0] : null; if(!mover) return;
+    const t=tableOf(where[mover]);
+    const cands=Object.entries(seats).filter(([s,g])=>!locked[g] && tableOf(s)!==t && tableOf(s)>0);
+    if(!cands.length) return;
+    const [s2,g2]=cands[Math.floor(Math.random()*cands.length)];
+    seats[where[mover]]=g2; seats[s2]=mover;
+  }
+}
+
+/* ---------- Render ---------- */
+function render(){
+  document.querySelectorAll("nav.tabs button").forEach(b=>b.setAttribute("aria-selected", String(b.dataset.tab===S.tab)));
+  const v=$("#view");
+  renderKeybar();
+  if(!S.ready){ return; }
+  if(!S.guests.size){ v.innerHTML=`<div class="empty"><h2>No guests yet</h2><p>Your guest list hasn't been loaded into the planner yet. Use Add guest on the Guests tab to start one by hand.</p></div>`; if(S.tab!=="guests") return; }
+  if(S.tab==="guests" && v.contains(document.activeElement) && document.activeElement.matches("input[type=text]")){ S.pendingRender=true; return; }
+  if(S.tab==="seating") v.innerHTML=renderSeating();
+  else if(S.tab==="guests") v.innerHTML=renderGuests();
+  else v.innerHTML=renderDrinks();
+}
+
+function chipHTML(g, opts={}){
+  const locked=S.seating.locked?.[g.id];
+  const q=S.poolSearch.trim().toLowerCase();
+  const dim = q && !g.name.toLowerCase().includes(q) && opts.seat;
+  const role = g.role ? ROLES[g.role] : "";
+  const tip = [g.name, g.category, role, g.dietary].filter(Boolean).join(" · ");
+  return `<div class="chip${S.selected===g.id?" sel":""}${dim?" dim":""}" data-guest="${esc(g.id)}" title="${esc(tip)}" style="--c:${colorFor(g)}">
+    <span class="dot"></span><span class="nm">${esc(opts.full?g.name:shortName(g.name))}</span>${g.dietary?`<span class="bd">${dietTag(g.dietary)}</span>`:""}${locked?`<span class="lk" aria-label="locked">🔒</span>`:""}</div>`;
+}
+function seatHTML(id, gmap){ const gid=seatsMap()[id]; const g=gid && gmap.get(gid); return `<div class="seat" data-seat="${id}">${g?chipHTML(g,{seat:true}):""}</div>`; }
+
+function renderSeating(){
+  const all=attending(); const gmap=new Map(all.map(g=>[g.id,g]));
+  const c=cfg(); const seats=seatsMap(); const gs=guestSeat();
+  const unseated=all.filter(g=>!gs[g.id] || !seats[gs[g.id]] || !seatInfo(gs[g.id]));
+  const total=seatList(c).length;
+  const q=S.poolSearch.trim().toLowerCase();
+  const groups=CATS.map(cat=>{ const list=unseated.filter(g=>g.category===cat && (!q || g.name.toLowerCase().includes(q))); return list.length?`<div class="group"><div class="label">${esc(cat)} · ${list.length}</div>${list.map(g=>chipHTML(g,{full:true})).join("")}</div>`:""; }).join("");
+  const sel=S.selected && gmap.get(S.selected);
+  const o={...DEFAULT_OPTS, ...(S.seating.opts||{})};
+  const dis=S.canWrite?"":" disabled";
+  let panel="";
+  if(S.panel==="shuffle") panel=`<div class="panel"><h4>Randomiser rules</h4><div class="opts">
+    ${[["couples","Keep couples & households together","Guests invited together sit side by side."],["clusters","Keep tags clustered","Sophia's Family near each other, Ronan's Friends near each other, and so on."],["familyFront","Families closest to the bridal table","Family tags fill Tables 1, 4, 7 and 10 first."],["mixSides","Mix the two sides","Ronan's people on one side of each table, Sophia's across from them."],["apart","Keep apart pairs","Never seats your keep-apart pairs at the same table."]].map(([k,t,d])=>`<label><input type="checkbox" data-opt="${k}"${o[k]?" checked":""}${dis}><span><b>${t}</b><small>${d}</small></span></label>`).join("")}
+    </div><p class="note">Locked guests (🔒) never move. The bridal party and both sets of parents start locked. The bridal table is never shuffled.</p>
+    <div class="row" style="margin-top:10px"><span class="label">Keep apart</span>
+      <select id="ap1"><option value="">Guest…</option>${all.map(g=>`<option value="${esc(g.id)}">${esc(g.name)}</option>`).join("")}</select>
+      <select id="ap2"><option value="">Guest…</option>${all.map(g=>`<option value="${esc(g.id)}">${esc(g.name)}</option>`).join("")}</select>
+      <button class="btn" data-act="addApart"${dis}>Add pair</button></div>
+    <div class="apart-list" style="margin-top:8px">${(S.seating.apart||[]).map(([a,b],i)=>`<span class="pill">${esc(gmap.get(a)?.name||a)} ↔ ${esc(gmap.get(b)?.name||b)} <button class="tog" data-act="rmApart" data-i="${i}" aria-label="Remove pair"${dis}>×</button></span>`).join("") || `<span class="note">No pairs yet.</span>`}</div>
+    <div class="row" style="margin-top:12px"><button class="btn primary" data-act="shuffle"${dis}>Shuffle now</button></div></div>`;
+  else if(S.panel==="setup") panel=`<div class="panel"><h4>Table setup</h4><div class="row">
+    <label class="check">Bridal table seats <input type="number" min="2" max="20" data-cfg="bridal" value="${c.bridal}"${dis}></label></div>
+    <div class="opts" style="margin-top:10px">${LONG.map(L=>{ const t={...DEFAULT_CONFIG[L.id],...c[L.id]}; return `<div><div class="label">Tables ${L.first}–${L.first+2}</div><div class="row" style="margin-top:4px">
+      <label class="check">Per side <input type="number" min="3" max="20" data-cfg="${L.id}.side" value="${t.side}"${dis}></label>
+      <label class="check"><input type="checkbox" data-cfg="${L.id}.top"${t.top?" checked":""}${dis}> Top end</label>
+      <label class="check"><input type="checkbox" data-cfg="${L.id}.bottom"${t.bottom?" checked":""}${dis}> Bottom end</label></div></div>`; }).join("")}</div>
+    <p class="note">Three 2430 × 900 mm tables make a 7.29 m long table, which fits about 12 a side at 60 cm each. Guests on seats you remove go back to the unseated list.</p></div>`;
+  else if(S.panel==="plans") panel=`<div class="panel"><h4>Saved plans</h4>
+    <div class="row" style="margin-bottom:10px"><input type="text" id="planName" placeholder="Name this layout" style="flex:1;min-width:180px"${dis}><button class="btn primary" data-act="savePlan"${dis}>Save current layout</button></div>
+    <div class="plans">${S.plans.length?S.plans.map(p=>{ const n=Object.keys(p.seats||{}).length; const conf=S.confirm===("load:"+p.id), confD=S.confirm===("del:"+p.id);
+      return `<div class="plan"><b>${esc(p.name)}</b><span class="note">${n} seated · ${new Date(p.savedAt).toLocaleDateString("en-NZ",{day:"numeric",month:"short"})}</span>
+      ${conf?`<span class="note">Replace the current layout?</span><button class="btn primary" data-act="loadPlan" data-id="${p.id}"${dis}>Replace</button><button class="btn" data-act="cancel">Cancel</button>`:
+        confD?`<button class="btn danger" data-act="delPlan" data-id="${p.id}"${dis}>Delete for good</button><button class="btn" data-act="cancel">Cancel</button>`:
+        `<button class="btn" data-act="askLoad" data-id="${p.id}"${dis}>Load</button><button class="btn danger" data-act="askDel" data-id="${p.id}"${dis}>Delete</button>`}</div>`; }).join(""):`<span class="note">No saved plans yet.</span>`}</div></div>`;
+  else if(S.panel==="clear") panel=`<div class="panel"><h4>Clear the layout?</h4><p class="note">Everyone except locked guests goes back to the unseated list.</p><div class="row"><button class="btn danger" data-act="clear"${dis}>Clear unlocked seats</button><button class="btn" data-act="cancel">Cancel</button></div></div>`;
+
+  const detail = sel ? `<div class="panel"><div class="detail"><span class="nm">${esc(sel.name)}</span>
+    <span class="pill" style="color:${colorFor({...sel})}">${esc(sel.category)}</span>${sel.role?`<span class="pill">${ROLES[sel.role]}</span>`:""}
+    <span class="pill">${gs[sel.id]&&seatInfo(gs[sel.id])?esc(seatLabel(gs[sel.id])):"Unseated"}</span>
+    ${sel.dietary?`<span class="pill bad">${esc(sel.dietary)}</span>`:""}${sel.transport?`<span class="pill">Transport: ${esc(sel.transport)}</span>`:""}
+    <span class="spacer" style="flex:1"></span>
+    <button class="btn" data-act="lock"${dis}>${S.seating.locked?.[sel.id]?"Unlock":"Lock seat"}</button>
+    ${gs[sel.id]?`<button class="btn" data-act="unseat"${dis}>Unseat</button>`:""}<button class="btn" data-act="deselect">Done</button></div>
+    <p class="note" style="margin:8px 0 0">Tap an empty seat to move ${esc(sel.name.split(" ")[0])} there, or tap someone else to swap.</p></div>` : "";
+
+  const longs=LONG.map(L=>{
+    const t={...DEFAULT_CONFIG[L.id],...c[L.id]}; const ids=seatList(c).filter(s=>s.t===L.id);
+    const filled=ids.filter(s=>seats[s.id]&&gmap.has(seats[s.id])); const diets=filled.filter(s=>gmap.get(seats[s.id]).dietary).length;
+    let rows="";
+    for(let i=0;i<t.side;i++){ const sg=segOf(i,t.side), first=i===0, seg=!first && segOf(i-1,t.side)!==sg;
+      rows+=seatHTML(`${L.id}-a-${i}`,gmap)+`<div class="tbar${first?" first":""}${seg?" seg":""}${i===t.side-1?" last":""}">${first||seg?`<span class="tn">${L.first+sg}</span>`:""}</div>`+seatHTML(`${L.id}-b-${i}`,gmap); }
+    return `<div class="long"><div class="head"><b>Tables ${L.first}–${L.first+2}</b><div>${filled.length}/${ids.length} seated${diets?` · ${diets} dietary`:""}</div></div>
+      ${t.top?`<div class="endrow">${seatHTML(`${L.id}-top`,gmap)}</div>`:""}${rows}${t.bottom?`<div class="endrow">${seatHTML(`${L.id}-bot`,gmap)}</div>`:""}</div>`;
+  }).join("");
+  const bridal=[...Array(c.bridal).keys()].map(i=>seatHTML(`B-${i}`,gmap)).join("");
+  const seatedCount=all.length-unseated.length;
+  return `<div class="toolbar">
+      <button class="btn primary" data-act="panel" data-p="shuffle">Randomise…</button>
+      <button class="btn" data-act="panel" data-p="plans">Saved plans${S.plans.length?` (${S.plans.length})`:""}</button>
+      <button class="btn" data-act="panel" data-p="setup">Table setup</button>
+      <button class="btn" data-act="panel" data-p="clear"${dis}>Clear</button>
+      <span class="spacer"></span>
+      <label class="check"><span class="label">Colour by</span><select id="colorBy">${[["tag","Tag"],["side","Side"],["level","Drinker level"],["diet","Dietary"],["gender","Gender"]].map(([k,t])=>`<option value="${k}"${S.colorBy===k?" selected":""}>${t}</option>`).join("")}</select></label>
+      <button class="btn" data-act="exportSeating">Export CSV</button>
+    </div>
+    ${panel}${detail}
+    <div class="seating">
+      <aside class="pool" data-pool="1"><h3>Unseated <span>${unseated.length} of ${all.length}</span></h3>
+        <input type="search" id="poolSearch" placeholder="Find a guest" value="${esc(S.poolSearch)}">
+        ${groups || `<p class="note" style="margin-top:12px">${q?"No unseated guests match.":"Everyone has a seat."}</p>`}
+        <p class="note" style="margin-top:14px">Drag a name onto a seat, or drop a seated guest here to unseat them.</p></aside>
+      <div style="min-width:0">
+        <div class="floor-wrap"><div class="floor">
+          <div class="floor-cap"><span>Marquee 10 × 10 m · ${seatedCount} of ${all.length} guests seated · ${total} seats</span><span>Bridal table faces the room</span></div>
+          <div class="bridal"><div class="seats">${bridal}</div><div class="bar">Bridal table</div></div>
+          <div class="longs">${longs}</div>
+        </div></div>
+        <div class="legend" style="margin-top:10px">${legendItems().map(([t,col])=>`<span><i style="background:${col}"></i>${esc(t)}</span>`).join("")}<span>CO coeliac · GF gluten free · DF dairy free · PES pescatarian · VEG vegetarian · NUT nut allergy</span></div>
+      </div>
+    </div>`;
+}
+
+/* ---------- Guests tab ---------- */
+function renderGuests(){
+  const all=[...S.guests.entries()].map(([id,g])=>({id,...g})).sort((a,b)=>(a.order??999)-(b.order??999));
+  const gs=guestSeat(); const q=S.gSearch.trim().toLowerCase();
+  const rows=all.filter(g=>(!q||g.name.toLowerCase().includes(q)) && (!S.gCat||g.category===S.gCat) &&
+    (!S.gMissing || (S.gMissing==="gender"&&!g.gender) || (S.gMissing==="level"&&!g.level) || (S.gMissing==="drinks"&&!(g.drinks||[]).length&&g.level!=="none")));
+  const dis=S.canWrite?"":" disabled";
+  const nG=all.filter(g=>g.gender).length, nL=all.filter(g=>g.level).length, nD=all.filter(g=>(g.drinks||[]).length).length;
+  const seg=(id,field,opts,val)=>`<div class="seg-ctl">${opts.map(([k,t])=>`<button data-gset="${field}" data-id="${esc(id)}" data-v="${k}" aria-pressed="${(val||"")===k}"${dis}>${t}</button>`).join("")}</div>`;
+  return `<div class="toolbar">
+    <input type="search" id="gSearch" placeholder="Search guests" value="${esc(S.gSearch)}">
+    <select id="gCat"><option value="">All tags</option>${CATS.map(c=>`<option${S.gCat===c?" selected":""}>${esc(c)}</option>`).join("")}</select>
+    <select id="gMissing"><option value="">Any info</option><option value="gender"${S.gMissing==="gender"?" selected":""}>Gender not set</option><option value="level"${S.gMissing==="level"?" selected":""}>Drinker level not set</option><option value="drinks"${S.gMissing==="drinks"?" selected":""}>No drinks picked</option></select>
+    <span class="note">${rows.length} shown · gender ${nG}/${all.length} · drinker level ${nL}/${all.length} · drinks ${nD}/${all.length}</span>
+    <span class="spacer"></span>
+    ${rows.length && rows.length<all.length ? `<label class="check"><span class="label">Set shown to</span><select id="bulkLevel"${dis}><option value="">Drinker level…</option>${LEVELS.slice(1).map(([k,t])=>`<option value="${k}">${t}</option>`).join("")}</select></label>`:""}
+    <button class="btn" data-act="exportGuests">Export CSV</button>
+    <button class="btn primary" data-act="addGuest"${dis}>Add guest</button></div>
+  <div class="tablewrap"><table class="grid"><thead><tr><th>Name</th><th>Tag</th><th>Role</th><th>Gender</th><th>Drinker</th><th>Drinks</th><th>Dietary</th><th>Transport</th><th>Staying</th><th>Seat</th><th>Notes</th><th></th></tr></thead><tbody>
+  ${rows.map(g=>`<tr class="${g.rsvp==="No"?"off":""}">
+    <td><div class="namecell" style="--c:var(${CATVAR[g.category]||"--muted"})"><span class="dot"></span><input type="text" data-gtext="name" data-id="${esc(g.id)}" value="${esc(g.name)}" aria-label="Name"${dis}></div></td>
+    <td><select data-gsel="category" data-id="${esc(g.id)}" aria-label="Tag"${dis}>${CATS.map(c=>`<option${g.category===c?" selected":""}>${esc(c)}</option>`).join("")}</select></td>
+    <td><select data-gsel="role" data-id="${esc(g.id)}" aria-label="Role"${dis}>${Object.entries(ROLES).map(([k,t])=>`<option value="${k}"${(g.role||"")===k?" selected":""}>${t}</option>`).join("")}</select></td>
+    <td>${seg(g.id,"gender",GENDERS,g.gender)}</td>
+    <td>${seg(g.id,"level",LEVELS,g.level)}</td>
+    <td><div class="togs">${TYPES.map(t=>`<button class="tog" data-drink="${t}" data-id="${esc(g.id)}" aria-pressed="${(g.drinks||[]).includes(t)}"${dis}>${TYPESHORT[t]}</button>`).join("")}</div></td>
+    <td><input type="text" data-gtext="dietary" data-id="${esc(g.id)}" value="${esc(g.dietary)}" aria-label="Dietary"${dis}></td>
+    <td><select data-gsel="transport" data-id="${esc(g.id)}" aria-label="Transport"${dis}>${TRANSPORT.map(t=>`<option value="${t}"${(g.transport||"")===t?" selected":""}>${t||"—"}</option>`).join("")}</select></td>
+    <td><input type="text" data-gtext="staying" data-id="${esc(g.id)}" value="${esc(g.staying)}" aria-label="Staying"${dis}></td>
+    <td style="white-space:nowrap">${gs[g.id]&&seatInfo(gs[g.id])?esc(seatLabel(gs[g.id])):`<span class="note">—</span>`}</td>
+    <td><input type="text" data-gtext="notes" data-id="${esc(g.id)}" value="${esc(g.notes)}" aria-label="Notes"${dis}></td>
+    <td>${S.confirm==="g:"+g.id?`<button class="btn danger" data-act="delGuest" data-id="${esc(g.id)}"${dis}>Delete</button>`:`<button class="tog" data-act="askDelGuest" data-id="${esc(g.id)}" aria-label="Remove ${esc(g.name)}"${dis}>×</button>`}</td>
+  </tr>`).join("")}
+  </tbody></table></div>
+  <p class="note">Edits save as you go and show up for both of you. Guests invited together share a household, which keeps them side by side when you randomise.</p>`;
+}
+
+/* ---------- Drinks ---------- */
+function drinksCalc(){
+  const st={...DEFAULT_SETTINGS, ...(S.settings||{}), perLevel:{...DEFAULT_SETTINGS.perLevel, ...(S.settings?.perLevel||{})}};
+  const lines=S.budget.filter(l=>l.include);
+  const planned={}, cost={}, servingsCost={};
+  for(const l of lines){ const sv=(+l.qty||0)*(+l.servingsPerUnit||0); planned[l.type]=(planned[l.type]||0)+sv; const c=(+l.qty||0)*((+l.unitCost||0)+(+l.corkage||0)); cost[l.type]=(cost[l.type]||0)+c; }
+  const alc=TYPES.filter(t=>t!=="Non-alcoholic");
+  const plannedAlc=alc.reduce((s,t)=>s+(planned[t]||0),0)||1;
+  const mix={}; alc.forEach(t=>mix[t]=(planned[t]||0)/plannedAlc);
+  const need={}, pickers={}; TYPES.forEach(t=>{need[t]=0; pickers[t]=0;});
+  const guests=attending(); let drinkers=0;
+  const f=st.thirst/100;
+  for(const g of guests){
+    const lvl=g.level||st.assumeLevel; const n=(lvl==="none"?0:(st.perLevel[lvl]||0))*f;
+    const picks=(g.drinks||[]); picks.forEach(t=>pickers[t]++);
+    if(lvl==="none"){ need["Non-alcoholic"]+= (st.perLevel.light||3) + (st.toast?1:0); continue; }
+    drinkers++;
+    if(picks.length) picks.forEach(t=>need[t]+=n/picks.length); else alc.forEach(t=>need[t]+=n*mix[t]);
+    if(st.toast) need["Sparkling"]+=1;
+  }
+  const buf=1+st.buffer/100; TYPES.forEach(t=>need[t]*=buf);
+  const rows=TYPES.map(t=>{ const p=planned[t]||0, nd=need[t]; const cps=p?cost[t]/p:null;
+    const lineFor=lines.filter(l=>l.type===t && l.servingsPerUnit>0).sort((a,b)=>((a.unitCost+a.corkage)/a.servingsPerUnit)-((b.unitCost+b.corkage)/b.servingsPerUnit))[0];
+    let sug="On target", cls="good";
+    if(nd-p>1){ cls="bad"; sug = lineFor ? `Add ${Math.ceil((nd-p)/lineFor.servingsPerUnit)} × ${lineFor.unit} of ${lineFor.item}` : (t==="Non-alcoholic"?"Plan some zero-alcohol options":"Nothing planned yet"); }
+    else if(p-nd>Math.max(10,nd*0.25)){ cls="warn"; sug=`About ${fmt(p-nd)} servings spare`; }
+    if(!nd && !p){ cls=""; sug="—"; }
+    return {t, need:nd, planned:p, pickers:pickers[t], cps, sug, cls}; });
+  const totalNeed=rows.reduce((s,r)=>s+r.need,0), totalPlanned=rows.reduce((s,r)=>s+r.planned,0);
+  const plannedCost=lines.reduce((s,l)=>s+(+l.qty||0)*((+l.unitCost||0)+(+l.corkage||0)),0);
+  const estCost=rows.reduce((s,r)=>s+(r.cps!=null?r.need*r.cps:0),0);
+  const uncosted=rows.filter(r=>r.need>0.5 && r.cps==null).map(r=>r.t);
+  return {st, rows, totalNeed, totalPlanned, plannedCost, estCost, uncosted, guests, drinkers};
+}
+function renderDrinks(){
+  const d=drinksCalc(), st=d.st; const dis=S.canWrite?"":" disabled";
+  const nL=d.guests.filter(g=>g.level).length, nP=d.guests.filter(g=>(g.drinks||[]).length).length;
+  const maxV=Math.max(1,...d.rows.map(r=>Math.max(r.need,r.planned)));
+  const stages=[...new Set(S.budget.map(l=>l.stage))];
+  const lineRows=S.budget.map(l=>{ const sv=(+l.qty||0)*(+l.servingsPerUnit||0), tot=(+l.qty||0)*((+l.unitCost||0)+(+l.corkage||0));
+    const num=(f,step="1")=>`<input type="number" step="${step}" min="0" data-line="${f}" data-id="${l.id}" value="${+l[f]||0}"${dis}>`;
+    return `<tr class="${l.include?"":"off"}"><td><input type="checkbox" data-linec="include" data-id="${l.id}"${l.include?" checked":""} aria-label="Include in budget"${dis}></td>
+    <td><input type="text" data-linet="stage" data-id="${l.id}" value="${esc(l.stage)}" aria-label="Stage"${dis}></td>
+    <td><select data-lines="type" data-id="${l.id}" aria-label="Type"${dis}>${TYPES.map(t=>`<option${l.type===t?" selected":""}>${t}</option>`).join("")}</select></td>
+    <td><input type="text" data-linet="item" data-id="${l.id}" value="${esc(l.item)}" aria-label="Item" style="min-width:200px"${dis}></td>
+    <td><input type="text" data-linet="supplier" data-id="${l.id}" value="${esc(l.supplier)}" aria-label="Supplier"${dis}></td>
+    <td class="num">${num("qty")}</td><td><input type="text" data-linet="unit" data-id="${l.id}" value="${esc(l.unit)}" aria-label="Unit" style="min-width:60px"${dis}></td>
+    <td class="num">${num("unitCost","0.01")}</td><td class="num">${num("corkage","0.01")}</td><td class="num">${num("servingsPerUnit")}</td>
+    <td class="num">${fmt(sv)}</td><td class="num">${money(tot)}</td>
+    <td><input type="text" data-linet="status" data-id="${l.id}" value="${esc(l.status)}" aria-label="Status"${dis}></td>
+    <td><input type="text" data-linet="notes" data-id="${l.id}" value="${esc(l.notes)}" aria-label="Notes" style="min-width:220px"${dis}></td>
+    <td>${S.confirm==="l:"+l.id?`<button class="btn danger" data-act="delLine" data-id="${l.id}"${dis}>Delete</button>`:`<button class="tog" data-act="askDelLine" data-id="${l.id}" aria-label="Remove line"${dis}>×</button>`}</td></tr>`; }).join("");
+  const diff=d.totalPlanned-d.totalNeed;
+  return `<div class="tiles">
+    <div class="tile"><div class="label">Servings needed</div><div class="v">${fmt(d.totalNeed)}</div><div class="s">${d.drinkers} drinkers, ${st.buffer}% buffer</div></div>
+    <div class="tile"><div class="label">Servings planned</div><div class="v">${fmt(d.totalPlanned)}</div><div class="s"><span class="pill ${Math.abs(diff)<d.totalNeed*0.05?"good":diff<0?"bad":"warn"}">${diff>=0?"+":"−"}${fmt(Math.abs(diff))} vs need</span></div></div>
+    <div class="tile"><div class="label">Budget as planned</div><div class="v">${money(d.plannedCost)}</div><div class="s">Product + corkage, included lines</div></div>
+    <div class="tile"><div class="label">Cost to match need</div><div class="v">${money(d.estCost)}</div><div class="s">${d.uncosted.length?`Excludes ${esc(d.uncosted.join(", "))} (no price yet)`:"At your planned prices per serving"}</div></div>
+  </div>
+  <div class="drinks-grid">
+    <div class="panel ctl"><h4 style="margin:0">Assumptions</h4>
+      ${["light","medium","heavy"].map(k=>`<div class="line"><span>${k[0].toUpperCase()+k.slice(1)} drinker</span><span><input type="number" min="0" max="30" data-pl="${k}" value="${st.perLevel[k]}"${dis}> drinks</span><input type="range" min="0" max="20" data-pl="${k}" value="${st.perLevel[k]}" aria-label="${k} drinks"${dis}></div>`).join("")}
+      <div class="line"><span>Guests with no level count as</span><select data-st="assumeLevel"${dis}>${LEVELS.slice(1).map(([k,t])=>`<option value="${k}"${st.assumeLevel===k?" selected":""}>${t}</option>`).join("")}</select></div>
+      <div class="line"><span>Thirst skew</span><b>${st.thirst}%</b><input type="range" min="50" max="160" step="5" data-st="thirst" value="${st.thirst}" aria-label="Thirst skew"${dis}></div>
+      <div class="line"><span>Buffer</span><b>${st.buffer}%</b><input type="range" min="0" max="40" step="5" data-st="buffer" value="${st.buffer}" aria-label="Buffer"${dis}></div>
+      <label class="check"><input type="checkbox" data-st="toast"${st.toast?" checked":""}${dis}> A toast glass for everyone <small>(bubbles, or 0% for non-drinkers)</small></label>
+      <p class="note" style="margin:0">Data so far: ${nL} of ${d.guests.length} guests have a drinker level and ${nP} have drink picks. Guests with no picks are split like your planned stock. Fill these in on the Guests tab.</p>
+    </div>
+    <div class="tablewrap"><table class="grid"><thead><tr><th>Drink</th><th class="num">Picked by</th><th class="num">Needed</th><th class="num">Planned</th><th>Need vs planned</th><th>Suggestion</th></tr></thead><tbody>
+      ${d.rows.map(r=>`<tr><td>${r.t}</td><td class="num">${r.pickers}</td><td class="num">${fmt(r.need)}</td><td class="num">${fmt(r.planned)}</td>
+        <td><div class="mini" title="Bar is planned, line is needed"><i style="width:${(r.planned/maxV*100).toFixed(1)}%"></i><b style="left:${(r.need/maxV*100).toFixed(1)}%"></b></div></td>
+        <td>${r.cls?`<span class="pill ${r.cls}">${esc(r.sug)}</span>`:`<span class="note">—</span>`}</td></tr>`).join("")}
+    </tbody></table></div>
+  </div>
+  <div class="toolbar"><h2 class="sec" style="margin:0">Drinks budget</h2><span class="spacer"></span><button class="btn primary" data-act="addLine"${dis}>Add line</button></div>
+  <div class="tablewrap"><table class="grid"><thead><tr><th>In</th><th>Stage</th><th>Type</th><th>Drink</th><th>Supplier</th><th class="num">Qty</th><th>Unit</th><th class="num">Cost/unit</th><th class="num">Corkage</th><th class="num">Serves/unit</th><th class="num">Servings</th><th class="num">Total</th><th>Status</th><th>Notes</th><th></th></tr></thead>
+  <tbody>${lineRows}</tbody>
+  <tfoot><tr><td colspan="10">Included total</td><td class="num">${fmt(d.totalPlanned)}</td><td class="num">${money(d.plannedCost)}</td><td colspan="3"></td></tr></tfoot></table></div>
+  <p class="note">Untick a line to leave it out of the totals. The Easy Tiger batched cocktails came in unticked as alternatives. ${stages.length} stages.</p>`;
+}
+
+/* ---------- CSV export ---------- */
+const csvCell = v => /[",\n]/.test(String(v??"")) ? `"${String(v).replace(/"/g,'""')}"` : String(v??"");
+async function saveFile(name, rows){
+  const data=rows.map(r=>r.map(csvCell).join(",")).join("\n");
+  const url=URL.createObjectURL(new Blob([data], {type:"text/csv;charset=utf-8"}));
+  const a=document.createElement("a"); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+function exportSeating(){
+  const gmap=new Map(attending().map(g=>[g.id,g])); const seats=seatsMap(); const rows=[["Table","Seat","Name","Tag","Dietary","Locked"]];
+  for(const s of seatList()){ const g=gmap.get(seats[s.id]); if(g) rows.push([s.t==="B"?"Bridal":`Table ${s.table}`, s.id, g.name, g.category, g.dietary, S.seating.locked?.[g.id]?"yes":""]); }
+  const gs=guestSeat(); attending().filter(g=>!gs[g.id]).forEach(g=>rows.push(["Unseated","",g.name,g.category,g.dietary,""]));
+  saveFile("RoSo seating plan.csv", rows);
+}
+function exportGuests(){
+  const gs=guestSeat(); const rows=[["Name","Tag","Role","Gender","Drinker level","Drinks","Dietary","Transport","Staying","Household","Seat","Notes"]];
+  [...S.guests.values()].sort((a,b)=>(a.order??999)-(b.order??999)).forEach(g=>{ const id=[...S.guests.entries()].find(([,x])=>x===g)[0];
+    rows.push([g.name,g.category,ROLES[g.role||""],g.gender,g.level,(g.drinks||[]).join("; "),g.dietary,g.transport,g.staying,g.household,gs[id]?seatLabel(gs[id]):"",g.notes]); });
+  saveFile("RoSo guests.csv", rows);
+}
+
+/* ---------- Events ---------- */
+document.addEventListener("click", async e=>{
+  const tab=e.target.closest("nav.tabs button"); if(tab){ S.tab=tab.dataset.tab; S.panel=null; S.confirm=null; try{ history.replaceState(null,"","#"+S.tab); }catch{} render(); return; }
+  const gb=e.target.closest("[data-gset]"); if(gb){ updateGuest(gb.dataset.id,{[gb.dataset.gset]:gb.dataset.v}); render(); return; }
+  const dr=e.target.closest("[data-drink]"); if(dr){ const g=S.guests.get(dr.dataset.id); const set=new Set(g.drinks||[]); set.has(dr.dataset.drink)?set.delete(dr.dataset.drink):set.add(dr.dataset.drink); updateGuest(dr.dataset.id,{drinks:TYPES.filter(t=>set.has(t))}); render(); return; }
+  const seatEl=e.target.closest(".seat"); if(seatEl && !e.target.closest(".chip") && S.selected && S.canWrite){ moveGuest(S.selected, seatEl.dataset.seat); return; }
+  const b=e.target.closest("[data-act]"); if(!b) return;
+  const id=b.dataset.id;
+  switch(b.dataset.act){
+    case "panel": S.panel = S.panel===b.dataset.p ? null : b.dataset.p; S.confirm=null; break;
+    case "cancel": S.confirm=null; if(S.panel==="clear") S.panel=null; break;
+    case "shuffle": randomise(); return;
+    case "clear": { const l=S.seating.locked||{}; for(const [s,g] of Object.entries(S.seating.seats)) if(!l[g]) delete S.seating.seats[s]; S.panel=null; saveSeating(); toast("Cleared unlocked seats"); return; }
+    case "lock": toggleLock(S.selected); return;
+    case "unseat": moveGuest(S.selected, null); return;
+    case "deselect": S.selected=null; break;
+    case "addApart": { const a=$("#ap1").value, c=$("#ap2").value; if(a&&c&&a!==c){ (S.seating.apart||(S.seating.apart=[])).push([a,c]); saveSeating(); } return; }
+    case "rmApart": S.seating.apart.splice(+b.dataset.i,1); saveSeating(); return;
+    case "savePlan": { const name=($("#planName").value||"").trim() || `Layout ${S.plans.length+1}`; const pid=slug(name)+"-"+Date.now().toString(36);
+      op(["plans",pid], {name, savedAt:new Date().toISOString(), config:cfg(), seats:{...S.seating.seats}, locked:{...(S.seating.locked||{})}}); if(S.canWrite) toast(`Saved “${name}”`); return; }
+    case "askLoad": S.confirm="load:"+id; break;
+    case "askDel": S.confirm="del:"+id; break;
+    case "loadPlan": { const p=S.plans.find(x=>x.id===id); S.seating.config={...DEFAULT_CONFIG,...p.config}; S.seating.seats={...p.seats}; S.seating.locked={...(p.locked||{})}; S.confirm=null; saveSeating(); toast(`Loaded “${p.name}”`); return; }
+    case "delPlan": S.confirm=null; op(["plans",id], undefined); return;
+    case "exportSeating": exportSeating(); return;
+    case "exportGuests": exportGuests(); return;
+    case "addGuest": { const gid="guest-"+Date.now().toString(36); const order=Math.max(0,...[...S.guests.values()].map(g=>g.order||0))+1;
+      const doc={name:"New guest", category:"Couple Friends", tier:"", rsvp:"Yes", dietary:"", transport:"", staying:"", gender:"", drinks:[], level:"", role:"", household:gid, notes:"", order};
+      S.gSearch=""; S.gCat=""; S.gMissing="";
+      op(["guests",gid], doc); setTimeout(()=>{ const el=document.querySelector(`[data-gtext="name"][data-id="${gid}"]`); el?.focus(); el?.select(); el?.scrollIntoView({block:"center"}); },50); return; }
+    case "askDelGuest": S.confirm="g:"+id; setTimeout(()=>{ if(S.confirm==="g:"+id){ S.confirm=null; render(); } },4000); break;
+    case "delGuest": { S.confirm=null; const gs=guestSeat(); if(gs[id]){ delete S.seating.seats[gs[id]]; saveSeating(); } op(["guests",id], undefined); toast("Guest removed"); return; }
+    case "addLine": { const lid="line-"+Date.now().toString(36); op(["budget",lid], {order:S.budget.length, include:true, stage:"Dinner", type:"Beer", item:"New drink", supplier:"", qty:0, unit:"bottle", unitCost:0, corkage:0, servingsPerUnit:1, status:"", notes:""}); return; }
+    case "askDelLine": S.confirm="l:"+id; setTimeout(()=>{ if(S.confirm==="l:"+id){ S.confirm=null; render(); } },4000); break;
+    case "delLine": S.confirm=null; op(["budget",id], undefined); return;
+    case "keyPanel": S.keyPanel=!S.keyPanel; S.keyMsg=""; renderKeybar(); if(S.keyPanel) $("#keyInput")?.focus(); return;
+    case "useKey": useKey($("#keyInput").value); return;
+    case "copyEditor": copyText(editorLink(), "Editor link copied"); return;
+    case "copyView": copyText(viewLink(), "View-only link copied"); return;
+    case "forgetKey": writeKey(""); Store.key=""; S.canWrite=false; S.keyPanel=false; setStatus("View only"); render(); return;
+  }
+  render();
+});
+document.addEventListener("change", e=>{
+  const t=e.target;
+  if(t.id==="colorBy"){ S.colorBy=t.value; render(); return; }
+  if(t.id==="gCat"){ S.gCat=t.value; render(); return; }
+  if(t.id==="gMissing"){ S.gMissing=t.value; render(); return; }
+  if(t.id==="bulkLevel" && t.value){ const v=t.value; const q=S.gSearch.trim().toLowerCase();
+    [...S.guests.entries()].filter(([,g])=>(!q||g.name.toLowerCase().includes(q))&&(!S.gCat||g.category===S.gCat)&&(!S.gMissing||(S.gMissing==="gender"&&!g.gender)||(S.gMissing==="level"&&!g.level)||(S.gMissing==="drinks"&&!(g.drinks||[]).length&&g.level!=="none")))
+      .forEach(([id])=>updateGuest(id,{level:v})); toast("Drinker level updated"); render(); return; }
+  if(t.dataset.opt){ S.seating.opts={...DEFAULT_OPTS,...(S.seating.opts||{}),[t.dataset.opt]:t.checked}; saveSeating(); return; }
+  if(t.dataset.cfg){ const c=cfg(); const [a,b]=t.dataset.cfg.split("."); if(b){ c[a]={...DEFAULT_CONFIG[a],...c[a],[b]: t.type==="checkbox"?t.checked:Math.max(3,Math.min(20,+t.value||12))}; } else c[a]=Math.max(2,Math.min(20,+t.value||10)); S.seating.config=c; saveSeating(); return; }
+  if(t.dataset.gtext){ const v=t.value.trim(); const g=S.guests.get(t.dataset.id); if(g && g[t.dataset.gtext]!==v) updateGuest(t.dataset.id,{[t.dataset.gtext]:v}); return; }
+  if(t.dataset.gsel){ updateGuest(t.dataset.id,{[t.dataset.gsel]:t.value}); render(); return; }
+  if(t.dataset.st){ S.settings={...DEFAULT_SETTINGS,...S.settings}; S.settings[t.dataset.st] = t.type==="checkbox"?t.checked : t.type==="range"? +t.value : t.value; saveSettings(); return; }
+  if(t.dataset.pl){ S.settings={...DEFAULT_SETTINGS,...S.settings}; S.settings.perLevel={...DEFAULT_SETTINGS.perLevel,...S.settings.perLevel,[t.dataset.pl]:Math.max(0,+t.value||0)}; saveSettings(); return; }
+  if(t.dataset.line){ updateLine(t.dataset.id,{[t.dataset.line]:Math.max(0,+t.value||0)}); return; }
+  if(t.dataset.linet){ updateLine(t.dataset.id,{[t.dataset.linet]:t.value.trim()}); return; }
+  if(t.dataset.lines){ updateLine(t.dataset.id,{[t.dataset.lines]:t.value}); return; }
+  if(t.dataset.linec){ updateLine(t.dataset.id,{[t.dataset.linec]:t.checked}); return; }
+});
+document.addEventListener("input", e=>{
+  const t=e.target;
+  if(t.id==="poolSearch"){ S.poolSearch=t.value; const pos=t.selectionStart; render(); const n=$("#poolSearch"); n.focus(); n.setSelectionRange(pos,pos); }
+  if(t.id==="gSearch"){ S.gSearch=t.value; const pos=t.selectionStart; render(); const n=$("#gSearch"); n.focus(); n.setSelectionRange(pos,pos); }
+  if(t.type==="range" && t.dataset.st){ const b=t.parentElement.querySelector("b"); if(b) b.textContent=t.value+"%"; }
+  if(t.type==="range" && t.dataset.pl){ const n=t.parentElement.querySelector('input[type="number"]'); if(n) n.value=t.value; }
+});
+document.addEventListener("focusout", ()=>{ if(S.pendingRender){ setTimeout(()=>{ if(!document.activeElement?.matches?.("input[type=text]")){ S.pendingRender=false; render(); } },0); } });
+
+/* drag and drop with pointer events (mouse + touch) */
+let drag=null;
+document.addEventListener("pointerdown", e=>{
+  const chip=e.target.closest(".chip[data-guest]"); if(!chip || e.button>0) return;
+  drag={id:chip.dataset.guest, x:e.clientX, y:e.clientY, started:false, ghost:null, over:null};
+});
+document.addEventListener("pointermove", e=>{
+  if(!drag) return;
+  if(!drag.started){ if(Math.hypot(e.clientX-drag.x, e.clientY-drag.y)<6 || !S.canWrite) return;
+    drag.started=true; const src=document.querySelector(`.chip[data-guest="${CSS.escape(drag.id)}"]`);
+    drag.ghost=src.cloneNode(true); drag.ghost.classList.add("ghost"); document.body.appendChild(drag.ghost); src.classList.add("dim"); }
+  e.preventDefault();
+  drag.ghost.style.left=e.clientX+"px"; drag.ghost.style.top=e.clientY+"px";
+  const el=document.elementFromPoint(e.clientX,e.clientY);
+  const over=el?.closest(".seat") || el?.closest("[data-pool]");
+  if(over!==drag.over){ drag.over?.classList.remove("hot","drop-hot"); drag.over=over; over?.classList.add(over.matches(".seat")?"hot":"drop-hot"); }
+}, {passive:false});
+function endDrag(e, cancelled){
+  if(!drag) return; const d=drag; drag=null;
+  if(!d.started){ if(!cancelled){ const seatEl=e.target.closest(".seat");
+      if(S.selected && S.selected!==d.id && seatEl && S.canWrite){ moveGuest(S.selected, seatEl.dataset.seat); S.selected=null; return; }
+      S.selected = S.selected===d.id ? null : d.id; render(); }
+    return; }
+  d.ghost.remove(); d.over?.classList.remove("hot","drop-hot");
+  if(!cancelled && d.over){ if(d.over.matches(".seat")) moveGuest(d.id, d.over.dataset.seat); else moveGuest(d.id, null); }
+  else render();
+}
+document.addEventListener("pointerup", e=>endDrag(e,false));
+document.addEventListener("pointercancel", e=>endDrag(e,true));
+document.addEventListener("keydown", e=>{
+  if(e.key==="Escape" && S.selected){ S.selected=null; render(); }
+  if(e.key==="Enter" && e.target.id==="keyInput") useKey(e.target.value);
+});
+window.addEventListener("beforeunload", e=>{ if(Store.pending.length){ e.preventDefault(); e.returnValue=""; } });
+
+/* ---------- Boot ---------- */
+(async function boot(){
+  let h=(location.hash||"").slice(1);
+  const m=h.match(/(?:^|&)key=([^&]+)/);
+  let linkKey="";
+  if(m){ linkKey=decodeURIComponent(m[1]); h=""; try{ history.replaceState(null,"",location.pathname); }catch{} }
+  if(["seating","guests","drinks"].includes(h)) S.tab=h;
+  render();
+  const saved=readKey();
+  try{
+    const f=await pull(linkKey||saved||"");
+    Store.remote=f.data; Store.sha=f.sha;
+  }catch(e){
+    if(e && e.code==="badkey"){ writeKey(""); try{ const f=await pull(""); Store.remote=f.data; Store.sha=f.sha; S.keyPanel=true; S.keyMsg="That edit key doesn't work (it may have expired). Ask for a new editor link."; }catch{} }
+  }
+  if(!Store.remote){ setStatus("Offline"); $("#view").innerHTML=`<div class="empty"><h2>Can't load the planner</h2><p>GitHub didn't answer. Check your connection and reload the page.</p></div>`; return; }
+  const k=linkKey||saved;
+  if(k && !S.keyMsg){ Store.key=k; writeKey(k); S.canWrite=true; }
+  S.ready=true; syncFromData();
+  setStatus(S.canWrite ? "You can edit" : "View only");
+  render();
+  setInterval(poll, S.canWrite ? 20000 : 60000);
+  document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) poll(); });
+})();
+})();
+</script>
+</body>
+</html>
