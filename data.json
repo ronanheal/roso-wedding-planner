@@ -1995,9 +1995,9 @@
     "top": false
    },
    "L2": {
-    "bottom": false,
     "side": 12,
-    "top": false
+    "top": false,
+    "bottom": false
    },
    "L3": {
     "bottom": false,
