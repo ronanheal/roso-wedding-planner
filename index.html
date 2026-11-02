@@ -85,6 +85,7 @@ aside.pool.drop-hot { outline: 2px dashed var(--accent); }
 .long .head { grid-column: 1 / -1; text-align: center; margin-bottom: 4px; }
 .long .head b { font-family: var(--display); font-weight: 500; font-size: 14px; }
 .long .head div { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.long .gap { grid-column: 1 / -1; height: 22px; }
 .long .endrow { grid-column: 1 / -1; display: flex; justify-content: center; }
 .long .endrow .seat { width: calc(50% - 15px); }
 .tbar { background: var(--table); border-left: 1px solid var(--table-line); border-right: 1px solid var(--table-line); position: relative; }
@@ -234,8 +235,8 @@ const LEVELS = [["","—"],["none","None"],["light","Light"],["medium","Med"],["
 const ROLES = {"":"Guest",groom:"Groom",bride:"Bride",groomsman:"Groomsman",bridesmaid:"Bridesmaid","bride-parent":"Bride's parent","groom-parent":"Groom's parent"};
 const GENDERS = [["","—"],["F","F"],["M","M"],["X","Other"]];
 const TRANSPORT = ["","Both","To the Venue","From the Venue","Neither"];
-const LONG = [{id:"L1",first:1},{id:"L2",first:4},{id:"L3",first:7},{id:"L4",first:10}];
-const DEFAULT_CONFIG = {bridal:10, L1:{side:12,top:false,bottom:false}, L2:{side:12,top:false,bottom:false}, L3:{side:12,top:false,bottom:false}, L4:{side:12,top:false,bottom:false}};
+const LONG = [{id:"L1"},{id:"L2"},{id:"L3"},{id:"L4"}];
+const DEFAULT_CONFIG = {bridal:10, L1:{side:12,top:false,bottom:false,split:false}, L2:{side:12,top:false,bottom:false,split:false}, L3:{side:12,top:false,bottom:false,split:false}, L4:{side:12,top:false,bottom:false,split:false}};
 const DEFAULT_OPTS = {couples:true, clusters:true, mixSides:false, familyFront:true, apart:true};
 const DEFAULT_SETTINGS = {perLevel:{light:3,medium:6,heavy:10}, assumeLevel:"medium", toast:true, thirst:100, buffer:10};
 
@@ -267,13 +268,18 @@ function dietTag(d){ d=(d||"").toLowerCase(); if(!d) return ""; const t=[];
   return t.join(" ") || "DIET"; }
 const cfg = () => ({...DEFAULT_CONFIG, ...(S.seating?.config||{})});
 function segOf(i,n){ return i < Math.round(n/3) ? 0 : i < Math.round(2*n/3) ? 1 : 2; }
+/* a long table is three numbered tables end to end, or two shorter tables with a gap when split */
+const halfOf = t => Math.ceil(t.side/2);
+const segFor = (t,i) => t.split ? (i < halfOf(t) ? 0 : 1) : segOf(i,t.side);
+function longLayout(c=cfg()){ let n=1; return LONG.map(L=>{ const t={...DEFAULT_CONFIG[L.id], ...(c[L.id]||{})}; const parts=t.split?2:3; const o={id:L.id, t, first:n, parts, last:n+parts-1}; n+=parts; return o; }); }
+const longName = l => l.parts===2 ? `Tables ${l.first} & ${l.last}` : `Tables ${l.first}–${l.last}`;
 function seatList(c=cfg()){
   const out=[];
   for(let i=0;i<c.bridal;i++) out.push({id:`B-${i}`, t:"B", table:"Bridal", idx:i});
-  for(const L of LONG){ const t={...DEFAULT_CONFIG[L.id], ...(c[L.id]||{})};
+  for(const L of longLayout(c)){ const t=L.t;
     if(t.top) out.push({id:`${L.id}-top`, t:L.id, side:"end", seg:0, table:L.first});
-    for(const sd of ["a","b"]) for(let i=0;i<t.side;i++) out.push({id:`${L.id}-${sd}-${i}`, t:L.id, side:sd, idx:i, seg:segOf(i,t.side), table:L.first+segOf(i,t.side)});
-    if(t.bottom) out.push({id:`${L.id}-bot`, t:L.id, side:"end", seg:2, table:L.first+2});
+    for(const sd of ["a","b"]) for(let i=0;i<t.side;i++) out.push({id:`${L.id}-${sd}-${i}`, t:L.id, side:sd, idx:i, seg:segFor(t,i), table:L.first+segFor(t,i)});
+    if(t.bottom) out.push({id:`${L.id}-bot`, t:L.id, side:"end", seg:L.parts-1, table:L.last});
   }
   return out;
 }
@@ -507,7 +513,7 @@ function renderSeating(){
   const dis=S.canWrite?"":" disabled";
   let panel="";
   if(S.panel==="shuffle") panel=`<div class="panel"><h4>Randomiser rules</h4><div class="opts">
-    ${[["couples","Keep couples & households together","Guests invited together sit side by side."],["clusters","Keep tags clustered","Sophia's Family near each other, Ronan's Friends near each other, and so on."],["familyFront","Families closest to the bridal table","Family tags fill Tables 1, 4, 7 and 10 first."],["mixSides","Mix the two sides","Ronan's people on one side of each table, Sophia's across from them."],["apart","Keep apart pairs","Never seats your keep-apart pairs at the same table."]].map(([k,t,d])=>`<label><input type="checkbox" data-opt="${k}"${o[k]?" checked":""}${dis}><span><b>${t}</b><small>${d}</small></span></label>`).join("")}
+    ${[["couples","Keep couples & households together","Guests invited together sit side by side."],["clusters","Keep tags clustered","Sophia's Family near each other, Ronan's Friends near each other, and so on."],["familyFront","Families closest to the bridal table","Family tags fill the front table of each long table first."],["mixSides","Mix the two sides","Ronan's people on one side of each table, Sophia's across from them."],["apart","Keep apart pairs","Never seats your keep-apart pairs at the same table."]].map(([k,t,d])=>`<label><input type="checkbox" data-opt="${k}"${o[k]?" checked":""}${dis}><span><b>${t}</b><small>${d}</small></span></label>`).join("")}
     </div><p class="note">Locked guests (🔒) never move. The bridal party and both sets of parents start locked. The bridal table is never shuffled.</p>
     <div class="row" style="margin-top:10px"><span class="label">Keep apart</span>
       <select id="ap1"><option value="">Guest…</option>${all.map(g=>`<option value="${esc(g.id)}">${esc(g.name)}</option>`).join("")}</select>
@@ -516,12 +522,14 @@ function renderSeating(){
     <div class="apart-list" style="margin-top:8px">${(S.seating.apart||[]).map(([a,b],i)=>`<span class="pill">${esc(gmap.get(a)?.name||a)} ↔ ${esc(gmap.get(b)?.name||b)} <button class="tog" data-act="rmApart" data-i="${i}" aria-label="Remove pair"${dis}>×</button></span>`).join("") || `<span class="note">No pairs yet.</span>`}</div>
     <div class="row" style="margin-top:12px"><button class="btn primary" data-act="shuffle"${dis}>Shuffle now</button></div></div>`;
   else if(S.panel==="setup") panel=`<div class="panel"><h4>Table setup</h4><div class="row">
-    <label class="check">Bridal table seats <input type="number" min="2" max="20" data-cfg="bridal" value="${c.bridal}"${dis}></label></div>
-    <div class="opts" style="margin-top:10px">${LONG.map(L=>{ const t={...DEFAULT_CONFIG[L.id],...c[L.id]}; return `<div><div class="label">Tables ${L.first}–${L.first+2}</div><div class="row" style="margin-top:4px">
-      <label class="check">Per side <input type="number" min="3" max="20" data-cfg="${L.id}.side" value="${t.side}"${dis}></label>
+    <label class="check">Bridal table seats <input type="number" min="2" max="20" data-cfg="bridal" value="${c.bridal}"${dis}></label>
+    <label class="check"><button class="btn" data-act="splitAll"${dis}>${longLayout(c).every(l=>l.t.split)?"Join all tables back up":"Split all in half"}</button></label></div>
+    <div class="opts" style="margin-top:10px">${longLayout(c).map(L=>{ const t=L.t; return `<div><div class="label">${longName(L)}</div><div class="row" style="margin-top:4px">
+      <label class="check"><input type="checkbox" data-cfg="${L.id}.split"${t.split?" checked":""}${dis}> Split in half</label>
+      ${t.split?`<label class="check">Per side, each half <input type="number" min="2" max="10" data-cfg="${L.id}.half" value="${halfOf(t)}"${dis}></label>`:`<label class="check">Per side <input type="number" min="3" max="20" data-cfg="${L.id}.side" value="${t.side}"${dis}></label>`}
       <label class="check"><input type="checkbox" data-cfg="${L.id}.top"${t.top?" checked":""}${dis}> Top end</label>
       <label class="check"><input type="checkbox" data-cfg="${L.id}.bottom"${t.bottom?" checked":""}${dis}> Bottom end</label></div></div>`; }).join("")}</div>
-    <p class="note">Three 2430 × 900 mm tables make a 7.29 m long table, which fits about 12 a side at 60 cm each. Guests on seats you remove go back to the unseated list.</p></div>`;
+    <p class="note">Three 2430 × 900 mm tables make a 7.29 m long table, which fits about 12 a side at 60 cm each. Split one in half to make two shorter tables with a gap between them, and table numbers update to match. Guests keep their seats when you split or join. Guests on seats you remove go back to the unseated list.</p></div>`;
   else if(S.panel==="plans") panel=`<div class="panel"><h4>Saved plans</h4>
     <div class="row" style="margin-bottom:10px"><input type="text" id="planName" placeholder="Name this layout" style="flex:1;min-width:180px"${dis}><button class="btn primary" data-act="savePlan"${dis}>Save current layout</button></div>
     <div class="plans">${S.plans.length?S.plans.map(p=>{ const n=Object.keys(p.seats||{}).length; const conf=S.confirm===("load:"+p.id), confD=S.confirm===("del:"+p.id);
@@ -540,13 +548,14 @@ function renderSeating(){
     ${gs[sel.id]?`<button class="btn" data-act="unseat"${dis}>Unseat</button>`:""}<button class="btn" data-act="deselect">Done</button></div>
     <p class="note" style="margin:8px 0 0">Tap an empty seat to move ${esc(sel.name.split(" ")[0])} there, or tap someone else to swap.</p></div>` : "";
 
-  const longs=LONG.map(L=>{
-    const t={...DEFAULT_CONFIG[L.id],...c[L.id]}; const ids=seatList(c).filter(s=>s.t===L.id);
+  const longs=longLayout(c).map(L=>{
+    const t=L.t; const ids=seatList(c).filter(s=>s.t===L.id);
     const filled=ids.filter(s=>seats[s.id]&&gmap.has(seats[s.id])); const diets=filled.filter(s=>gmap.get(seats[s.id]).dietary).length;
     let rows="";
-    for(let i=0;i<t.side;i++){ const sg=segOf(i,t.side), first=i===0, seg=!first && segOf(i-1,t.side)!==sg;
-      rows+=seatHTML(`${L.id}-a-${i}`,gmap)+`<div class="tbar${first?" first":""}${seg?" seg":""}${i===t.side-1?" last":""}">${first||seg?`<span class="tn">${L.first+sg}</span>`:""}</div>`+seatHTML(`${L.id}-b-${i}`,gmap); }
-    return `<div class="long"><div class="head"><b>Tables ${L.first}–${L.first+2}</b><div>${filled.length}/${ids.length} seated${diets?` · ${diets} dietary`:""}</div></div>
+    for(let i=0;i<t.side;i++){ const sg=segFor(t,i), brk=i>0 && segFor(t,i-1)!==sg, gap=brk && t.split, first=i===0||gap, last=i===t.side-1||(t.split && segFor(t,i+1)!==sg);
+      if(gap) rows+=`<div class="gap"></div>`;
+      rows+=seatHTML(`${L.id}-a-${i}`,gmap)+`<div class="tbar${first?" first":""}${brk&&!gap?" seg":""}${last?" last":""}">${first||brk?`<span class="tn">${L.first+sg}</span>`:""}</div>`+seatHTML(`${L.id}-b-${i}`,gmap); }
+    return `<div class="long"><div class="head"><b>${longName(L)}</b><div>${filled.length}/${ids.length} seated${diets?` · ${diets} dietary`:""}</div></div>
       ${t.top?`<div class="endrow">${seatHTML(`${L.id}-top`,gmap)}</div>`:""}${rows}${t.bottom?`<div class="endrow">${seatHTML(`${L.id}-bot`,gmap)}</div>`:""}</div>`;
   }).join("");
   const bridal=[...Array(c.bridal).keys()].map(i=>seatHTML(`B-${i}`,gmap)).join("");
@@ -796,6 +805,7 @@ document.addEventListener("click", async e=>{
     case "shuffle": randomise(); return;
     case "clear": { const l=S.seating.locked||{}; for(const [s,g] of Object.entries(S.seating.seats)) if(!l[g]) delete S.seating.seats[s]; S.panel=null; saveSeating(); toast("Cleared unlocked seats"); return; }
     case "lock": toggleLock(S.selected); return;
+    case "splitAll": { const c=cfg(); const all=longLayout(c).every(l=>l.t.split); for(const L of LONG) c[L.id]={...DEFAULT_CONFIG[L.id],...c[L.id],split:!all}; S.seating.config=c; saveSeating(); toast(all?"Joined the tables back up":"Split every long table in half"); return; }
     case "unseat": moveGuest(S.selected, null); return;
     case "deselect": S.selected=null; break;
     case "addApart": { const a=$("#ap1").value, c=$("#ap2").value; if(a&&c&&a!==c){ (S.seating.apart||(S.seating.apart=[])).push([a,c]); saveSeating(); } return; }
@@ -842,7 +852,7 @@ document.addEventListener("change", e=>{
   if(t.id==="gMissing"){ S.gMissing=t.value; render(); return; }
   if(t.id==="bulkLevel" && t.value){ const v=t.value; guestRows().rows.forEach(g=>updateGuest(g.id,{level:v})); toast("Drinker level updated"); render(); return; }
   if(t.dataset.opt){ S.seating.opts={...DEFAULT_OPTS,...(S.seating.opts||{}),[t.dataset.opt]:t.checked}; saveSeating(); return; }
-  if(t.dataset.cfg){ const c=cfg(); const [a,b]=t.dataset.cfg.split("."); if(b){ c[a]={...DEFAULT_CONFIG[a],...c[a],[b]: t.type==="checkbox"?t.checked:Math.max(3,Math.min(20,+t.value||12))}; } else c[a]=Math.max(2,Math.min(20,+t.value||10)); S.seating.config=c; saveSeating(); return; }
+  if(t.dataset.cfg){ const c=cfg(); const [a,b]=t.dataset.cfg.split("."); if(b==="half"){ c[a]={...DEFAULT_CONFIG[a],...c[a], side:2*Math.max(2,Math.min(10,+t.value||6))}; } else if(b){ c[a]={...DEFAULT_CONFIG[a],...c[a],[b]: t.type==="checkbox"?t.checked:Math.max(3,Math.min(20,+t.value||12))}; } else c[a]=Math.max(2,Math.min(20,+t.value||10)); S.seating.config=c; saveSeating(); return; }
   if(t.dataset.gtext){ const v=t.value.trim(); const g=S.guests.get(t.dataset.id); if(g && g[t.dataset.gtext]!==v) updateGuest(t.dataset.id,{[t.dataset.gtext]:v}); return; }
   if(t.dataset.gsel){ updateGuest(t.dataset.id,{[t.dataset.gsel]:t.value}); render(); return; }
   if(t.dataset.st){ S.settings={...DEFAULT_SETTINGS,...S.settings}; S.settings[t.dataset.st] = t.type==="checkbox"?t.checked : t.type==="range"? +t.value : t.value; saveSettings(); return; }
