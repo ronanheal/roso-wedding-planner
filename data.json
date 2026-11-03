@@ -2026,12 +2026,10 @@
    "L3-a-0": "marie-nouata",
    "L3-a-1": "sharon-marr",
    "L3-a-2": "hamish-marr",
-   "L3-a-4": "nigel-hingston",
    "L3-a-5": "coralie-hingston",
    "L3-a-8": "ryan-hawke",
    "L3-a-9": "aleshia-hawke",
    "L3-b-0": "mike-nouata",
-   "L3-b-4": "kim-hurndell",
    "L3-b-6": "caitlean-smith",
    "L3-b-7": "lee",
    "L3-b-8": "maddison-smith",
@@ -2106,7 +2104,9 @@
    "L3-b-9": "devon-peat",
    "L3-b-10": "bj-peat",
    "L3-a-6": "jesse-salmon",
-   "L3-b-5": "erin-gardiner"
+   "L3-b-5": "erin-gardiner",
+   "L3-a-3": "kim-hurndell",
+   "L3-b-4": "nigel-hingston"
   },
   "locked": {
    "alesi-hertzke": true,
