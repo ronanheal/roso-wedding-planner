@@ -2090,7 +2090,6 @@
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
    "L4-a-7": "troy-freeson",
-   "L4-b-6": "lorne-frost",
    "L4-b-7": "keith-proctor",
    "L4-b-8": "janine-proctor",
    "L4-a-2": "mila-warwick",
@@ -2103,7 +2102,8 @@
    "L4-a-3": "sam-clark",
    "L4-a-11": "jo-freeson",
    "L4-b-10": "cheryl-frost",
-   "L4-b-4": "boston-malatai"
+   "L4-b-4": "boston-malatai",
+   "L4-b-9": "lorne-frost"
   },
   "locked": {
    "alesi-hertzke": true,
