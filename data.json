@@ -2023,7 +2023,6 @@
    "B-9": "libby-proctor",
    "L2-a-0": "chris-heal",
    "L2-a-1": "tim-heal",
-   "L2-a-2": "liam-salmon",
    "L2-a-3": "maddison-salmon",
    "L2-a-4": "lucca-smith",
    "L2-b-0": "rebekah-heal",
@@ -2055,7 +2054,8 @@
    "L4-b-3": "keith-proctor",
    "L3-b-3": "amiee-gardiner",
    "L3-a-3": "erin-gardiner",
-   "L4-b-4": "janine-proctor"
+   "L4-b-4": "janine-proctor",
+   "L1-a-0": "liam-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
