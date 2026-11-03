@@ -2076,7 +2076,6 @@
    "L2-a-7": "louise-peat",
    "L2-a-8": "andrew-peat",
    "L2-a-9": "jacqueline-bennett",
-   "L3-a-10": "jesse-salmon",
    "L2-b-9": "lynn-mckenzie",
    "L2-b-7": "ben-muvae",
    "L2-b-8": "vanessa-muvae",
@@ -2106,7 +2105,8 @@
    "L4-b-8": "cheryl-frost",
    "L1-b-0": "luca-ensor",
    "L3-b-9": "devon-peat",
-   "L3-b-10": "bj-peat"
+   "L3-b-10": "bj-peat",
+   "L3-a-6": "jesse-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
