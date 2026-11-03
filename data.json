@@ -2062,8 +2062,7 @@
    "L2-b-4": "margot-carney",
    "L2-a-3": "kim-macleod",
    "L2-a-4": "paul-macleod",
-   "L2-a-5": "steve-anderson",
-   "L2-a-6": "paul-nouata",
+   "L2-a-6": "steve-anderson",
    "L2-b-6": "christen-salmon",
    "L2-b-5": "tim-heal",
    "L2-a-7": "andrew-peat",
@@ -2116,7 +2115,8 @@
    "L3-b-10": "kat-nouata",
    "L4-b-8": "lorne-frost",
    "L2-a-8": "louise-peat",
-   "L3-b-9": "jessica-salmon"
+   "L3-b-9": "jessica-salmon",
+   "L2-a-5": "paul-nouata"
   },
   "locked": {
    "alesi-hertzke": true,
