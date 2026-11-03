@@ -2040,7 +2040,6 @@
    "L4-b-0": "siena-frost",
    "L4-a-1": "keira-freeson",
    "L4-a-0": "charlotte-d-biasio",
-   "L4-a-3": "troy-freeson",
    "L4-a-2": "jo-freeson",
    "L4-b-1": "cheryl-frost",
    "L4-b-2": "lorne-frost",
@@ -2096,7 +2095,8 @@
    "L2-a-10": "shalese-hertzke",
    "L2-b-10": "nicola-thomas",
    "L3-b-1": "john-warwick",
-   "L3-b-2": "kara-warwick"
+   "L3-b-2": "kara-warwick",
+   "L4-a-7": "troy-freeson"
   },
   "locked": {
    "alesi-hertzke": true,
