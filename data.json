@@ -2073,7 +2073,6 @@
    "L1-b-10": "marcus-hertzke",
    "L1-b-11": "flynn-james",
    "L2-a-6": "tim-heal",
-   "L2-b-6": "steve-anderson",
    "L2-b-5": "christen-salmon",
    "L2-b-7": "jessica-salmon",
    "L2-a-1": "mike-barron",
@@ -2084,7 +2083,8 @@
    "L2-b-9": "jesse-salmon",
    "L2-b-4": "margot-carney",
    "L2-a-3": "kim-macleod",
-   "L2-a-4": "paul-macleod"
+   "L2-a-4": "paul-macleod",
+   "L2-a-5": "steve-anderson"
   },
   "locked": {
    "alesi-hertzke": true,
