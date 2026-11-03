@@ -2028,7 +2028,6 @@
    "L3-a-2": "hamish-marr",
    "L3-a-4": "nigel-hingston",
    "L3-a-5": "coralie-hingston",
-   "L3-a-6": "devon-peat",
    "L3-a-7": "bj-peat",
    "L3-a-8": "ryan-hawke",
    "L3-a-9": "aleshia-hawke",
@@ -2106,7 +2105,8 @@
    "L4-a-5": "sam-clark",
    "L4-a-4": "india-hughes",
    "L4-b-8": "cheryl-frost",
-   "L1-b-0": "luca-ensor"
+   "L1-b-0": "luca-ensor",
+   "L3-b-9": "devon-peat"
   },
   "locked": {
    "alesi-hertzke": true,
