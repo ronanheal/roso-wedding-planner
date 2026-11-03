@@ -2043,7 +2043,6 @@
    "L1-a-0": "liam-salmon",
    "L1-a-2": "maddison-salmon",
    "L1-a-1": "lucca-smith",
-   "L1-b-0": "bruno-quinn",
    "L1-b-1": "james-pope",
    "L1-a-3": "ali-crockpot",
    "L1-a-4": "peter-watkins",
@@ -2105,7 +2104,8 @@
    "L4-b-6": "janine-proctor",
    "L4-b-7": "lorne-frost",
    "L4-b-9": "cheryl-frost",
-   "L4-b-8": "india-hughes"
+   "L4-b-8": "india-hughes",
+   "L4-b-3": "bruno-quinn"
   },
   "locked": {
    "alesi-hertzke": true,
