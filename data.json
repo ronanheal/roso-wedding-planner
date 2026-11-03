@@ -2098,7 +2098,6 @@
    "L1-b-0": "luca-ensor",
    "L3-b-9": "devon-peat",
    "L3-b-10": "bj-peat",
-   "L3-a-3": "kim-hurndell",
    "L3-b-11": "caitlean-smith",
    "L3-a-11": "lee",
    "L3-b-6": "rory-gardiner",
@@ -2107,8 +2106,9 @@
    "L3-b-4": "amiee-gardiner",
    "L3-b-3": "erin-gardiner",
    "L3-b-5": "finn-gardiner",
-   "L3-a-4": "coralie-hingston",
-   "L3-a-5": "nigel-hingston"
+   "L3-a-7": "coralie-hingston",
+   "L3-a-4": "kim-hurndell",
+   "L3-a-3": "nigel-hingston"
   },
   "locked": {
    "alesi-hertzke": true,
