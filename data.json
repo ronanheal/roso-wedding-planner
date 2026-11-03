@@ -2037,7 +2037,6 @@
    "L3-b-6": "caitlean-smith",
    "L3-b-7": "lee",
    "L3-b-8": "maddison-smith",
-   "L4-b-0": "siena-frost",
    "L4-a-0": "charlotte-d-biasio",
    "L3-b-3": "amiee-gardiner",
    "L3-a-3": "erin-gardiner",
@@ -2098,7 +2097,8 @@
    "L4-a-2": "mila-warwick",
    "L4-a-1": "scarlett-warwick",
    "L4-b-9": "keira-freeson",
-   "L4-b-4": "cheryl-frost"
+   "L4-b-4": "cheryl-frost",
+   "L4-b-1": "siena-frost"
   },
   "locked": {
    "alesi-hertzke": true,
