@@ -2095,7 +2095,6 @@
    "L4-b-1": "siena-frost",
    "L4-b-0": "keira-freeson",
    "L4-b-2": "george-frost",
-   "L4-b-3": "india-hughes",
    "L4-b-4": "boston-malatai",
    "L4-a-3": "chloe-reynolds",
    "L4-a-4": "sam-clark",
@@ -2105,7 +2104,8 @@
    "L4-b-5": "keith-proctor",
    "L4-b-6": "janine-proctor",
    "L4-b-7": "lorne-frost",
-   "L4-b-9": "cheryl-frost"
+   "L4-b-9": "cheryl-frost",
+   "L4-b-8": "india-hughes"
   },
   "locked": {
    "alesi-hertzke": true,
