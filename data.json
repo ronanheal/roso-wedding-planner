@@ -2023,9 +2023,6 @@
    "B-9": "libby-proctor",
    "L2-a-0": "chris-heal",
    "L2-b-0": "rebekah-heal",
-   "L2-b-1": "jessica-salmon",
-   "L2-b-2": "christen-salmon",
-   "L2-b-3": "jesse-salmon",
    "L3-a-0": "marie-nouata",
    "L3-a-1": "sharon-marr",
    "L3-a-2": "hamish-marr",
@@ -2040,7 +2037,6 @@
    "L3-b-6": "caitlean-smith",
    "L3-b-7": "lee",
    "L3-b-8": "maddison-smith",
-   "L2-b-4": "steve-anderson",
    "L4-b-0": "siena-frost",
    "L4-a-1": "keira-freeson",
    "L4-a-0": "charlotte-d-biasio",
@@ -2076,7 +2072,11 @@
    "L1-b-9": "emma-hertzke",
    "L1-b-10": "marcus-hertzke",
    "L1-b-11": "flynn-james",
-   "L2-a-6": "tim-heal"
+   "L2-a-6": "tim-heal",
+   "L2-b-6": "steve-anderson",
+   "L2-b-5": "christen-salmon",
+   "L2-b-4": "jesse-salmon",
+   "L2-b-7": "jessica-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
