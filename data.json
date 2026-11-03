@@ -2026,7 +2026,6 @@
    "L3-a-0": "marie-nouata",
    "L3-a-1": "sharon-marr",
    "L3-a-2": "hamish-marr",
-   "L3-a-5": "coralie-hingston",
    "L3-a-8": "ryan-hawke",
    "L3-a-9": "aleshia-hawke",
    "L3-b-0": "mike-nouata",
@@ -2034,7 +2033,6 @@
    "L3-b-7": "lee",
    "L3-b-8": "maddison-smith",
    "L4-a-0": "charlotte-d-biasio",
-   "L3-b-3": "amiee-gardiner",
    "L1-a-0": "liam-salmon",
    "L1-a-2": "maddison-salmon",
    "L1-a-1": "lucca-smith",
@@ -2104,9 +2102,11 @@
    "L3-b-9": "devon-peat",
    "L3-b-10": "bj-peat",
    "L3-a-6": "jesse-salmon",
-   "L3-b-5": "erin-gardiner",
    "L3-a-3": "kim-hurndell",
-   "L3-b-4": "nigel-hingston"
+   "L3-b-4": "nigel-hingston",
+   "L3-a-4": "amiee-gardiner",
+   "L3-b-3": "coralie-hingston",
+   "L3-a-5": "erin-gardiner"
   },
   "locked": {
    "alesi-hertzke": true,
