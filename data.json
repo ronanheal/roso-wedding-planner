@@ -471,6 +471,9 @@
    "category": "Sophia's Family",
    "dietary": "",
    "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
     "Cocktail"
    ],
    "gender": "F",
@@ -1013,6 +1016,7 @@
    "drinks": [
     "White wine",
     "Rosé",
+    "Red wine",
     "Cocktail"
    ],
    "gender": "F",
