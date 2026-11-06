@@ -2490,7 +2490,7 @@
    "medium": 6
   },
   "assumeLevel": "medium",
-  "toast": true,
+  "toast": false,
   "thirst": 100,
   "buffer": 10
  }
