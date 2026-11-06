@@ -1086,7 +1086,9 @@
   "libby-proctor": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h5",
    "level": "medium",
