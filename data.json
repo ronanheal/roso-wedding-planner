@@ -697,7 +697,12 @@
   "india-hughes": {
    "category": "Sophia's Friends",
    "dietary": "Coeliac & Pescatarian",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h10",
    "level": "medium",
