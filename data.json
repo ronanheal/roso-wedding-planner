@@ -787,7 +787,9 @@
   "josh-commons": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h29",
    "level": "light",
