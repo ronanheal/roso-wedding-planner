@@ -586,6 +586,7 @@
    "dietary": "",
    "drinks": [
     "Sparkling",
+    "White wine",
     "Cocktail"
    ],
    "gender": "F",
@@ -1729,7 +1730,11 @@
   "steve-anderson": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h47",
    "level": "light",
