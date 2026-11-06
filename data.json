@@ -19,7 +19,9 @@
   "alesi-hertzke": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h30",
    "level": "medium",
