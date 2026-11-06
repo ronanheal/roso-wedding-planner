@@ -1362,7 +1362,11 @@
   "nicola-thomas": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Red wine"
+   ],
    "gender": "F",
    "household": "h59",
    "level": "light",
