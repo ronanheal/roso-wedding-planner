@@ -704,7 +704,13 @@
   "jacqueline-bennett": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h49",
    "level": "medium",
