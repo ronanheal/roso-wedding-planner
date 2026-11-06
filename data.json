@@ -1101,7 +1101,11 @@
   "luca-ensor": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h44",
    "level": "light",
