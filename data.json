@@ -267,7 +267,11 @@
   "caitlean-smith": {
    "category": "Sophia's Family",
    "dietary": "Gluten & Dairy Free",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h23",
    "level": "light",
@@ -1126,10 +1130,12 @@
   "lee": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h23",
-   "level": "",
+   "level": "light",
    "name": "Lee Collins",
    "notes": "",
    "order": 42,
