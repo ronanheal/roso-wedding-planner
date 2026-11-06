@@ -541,10 +541,12 @@
   "erin-gardiner": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "F",
    "household": "h20",
-   "level": "",
+   "level": "heavy",
    "name": "Erin Gardiner",
    "notes": "",
    "order": 34,
