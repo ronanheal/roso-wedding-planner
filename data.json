@@ -142,7 +142,9 @@
   "barbra-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Non-alcoholic"
+   ],
    "gender": "F",
    "household": "h17",
    "level": "none",
