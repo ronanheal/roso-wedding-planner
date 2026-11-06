@@ -412,6 +412,9 @@
    "category": "Sophia's Family",
    "dietary": "Coeliac",
    "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
     "Cocktail"
    ],
    "gender": "F",
@@ -1471,7 +1474,9 @@
   "nigel-hingston": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h24",
    "level": "light",
