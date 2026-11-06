@@ -723,7 +723,10 @@
   "james-pope": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h38",
    "level": "medium",
@@ -1151,6 +1154,7 @@
    "category": "Ronan's Friends",
    "dietary": "",
    "drinks": [
+    "Sparkling",
     "Beer",
     "Cocktail"
    ],
