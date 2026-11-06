@@ -1858,7 +1858,9 @@
   "troy-freeson": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h4",
    "level": "heavy",
