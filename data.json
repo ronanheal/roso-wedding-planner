@@ -1314,10 +1314,12 @@
   "marie-nouata": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h14",
-   "level": "",
+   "level": "light",
    "name": "Marie Nouata",
    "notes": "",
    "order": 24,
