@@ -1658,7 +1658,9 @@
   "scarlett-warwick": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h7",
    "level": "light",
