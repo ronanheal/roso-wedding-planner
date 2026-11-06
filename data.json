@@ -682,7 +682,12 @@
   "haley-charmers": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h28",
    "level": "medium",
@@ -1849,7 +1854,10 @@
   "sharn-charmers": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h28",
    "level": "medium",
