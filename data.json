@@ -1788,7 +1788,9 @@
   "siena-frost": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h8",
    "level": "light",
