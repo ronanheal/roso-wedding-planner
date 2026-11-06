@@ -3,7 +3,9 @@
   "aleshia-hawke": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h21",
    "level": "",
@@ -565,7 +567,9 @@
   "finn-gardiner": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Non-alcoholic"
+   ],
    "gender": "M",
    "household": "h20",
    "level": "",
@@ -1602,7 +1606,9 @@
   "rory-gardiner": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Non-alcoholic"
+   ],
    "gender": "M",
    "household": "h20",
    "level": "",
@@ -1640,7 +1646,9 @@
   "ryan-hawke": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h21",
    "level": "",
