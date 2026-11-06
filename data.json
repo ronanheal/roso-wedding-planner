@@ -1733,7 +1733,12 @@
   "shirani-barron": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h55",
    "level": "medium",
