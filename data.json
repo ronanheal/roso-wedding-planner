@@ -85,10 +85,14 @@
   "andrew-peat": {
    "category": "Couple Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine"
+   ],
    "gender": "M",
    "household": "h60",
-   "level": "",
+   "level": "light",
    "name": "Andrew Peat",
    "notes": "",
    "order": 102,
@@ -1239,10 +1243,14 @@
   "louise-peat": {
    "category": "Couple Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine"
+   ],
    "gender": "F",
    "household": "h60",
-   "level": "",
+   "level": "light",
    "name": "Louise Peat",
    "notes": "",
    "order": 103,
