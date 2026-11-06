@@ -310,7 +310,9 @@
   "cheryl-frost": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h8",
    "level": "",
@@ -798,7 +800,9 @@
   "janine-proctor": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h6",
    "level": "",
@@ -852,7 +856,9 @@
   "jo-freeson": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h4",
    "level": "",
@@ -868,7 +874,9 @@
   "john-warwick": {
    "category": "Couple Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h7",
    "level": "",
@@ -924,7 +932,9 @@
   "kara-warwick": {
    "category": "Couple Friends",
    "dietary": "Gluten & Dairy Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h7",
    "level": "",
@@ -995,7 +1005,9 @@
   "keith-proctor": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h6",
    "level": "",
@@ -1107,7 +1119,9 @@
   "libby-proctor": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h5",
    "level": "",
@@ -1350,7 +1364,9 @@
   "mila-warwick": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h7",
    "level": "",
@@ -1678,7 +1694,9 @@
   "scarlett-warwick": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h7",
    "level": "",
@@ -1805,7 +1823,9 @@
   "siena-frost": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h8",
    "level": "",
@@ -1902,7 +1922,9 @@
   "troy-freeson": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h4",
    "level": "",
