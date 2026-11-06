@@ -803,10 +803,12 @@
   "james-hingston": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h24",
-   "level": "",
+   "level": "heavy",
    "name": "James Hingston",
    "notes": "",
    "order": 45,
