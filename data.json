@@ -20,7 +20,8 @@
    "category": "Ronan's Friends",
    "dietary": "",
    "drinks": [
-    "Beer"
+    "Beer",
+    "Cocktail"
    ],
    "gender": "M",
    "household": "h30",
@@ -1322,7 +1323,6 @@
    "dietary": "",
    "drinks": [
     "Sparkling",
-    "White wine",
     "Rosé",
     "Cocktail"
    ],
