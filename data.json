@@ -1011,7 +1011,14 @@
   "kim-macleod": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h54",
    "level": "medium",
@@ -1380,7 +1387,10 @@
   "paul-macleod": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer"
+   ],
    "gender": "M",
    "household": "h54",
    "level": "medium",
