@@ -1433,10 +1433,15 @@
   "olivia-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h15",
-   "level": "",
+   "level": "medium",
    "name": "Olivia Nouata",
    "notes": "",
    "order": 25,
