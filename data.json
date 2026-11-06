@@ -42,6 +42,8 @@
    "dietary": "",
    "drinks": [
     "Sparkling",
+    "White wine",
+    "Rosé",
     "Cocktail"
    ],
    "gender": "F",
@@ -707,7 +709,11 @@
   "jake-blow": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h43",
    "level": "medium",
