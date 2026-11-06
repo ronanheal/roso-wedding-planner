@@ -118,7 +118,9 @@
   "artemis-hingston": {
    "category": "Sophia's Family",
    "dietary": "Vegetarian",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "X",
    "household": "h24",
    "level": "",
@@ -403,7 +405,9 @@
   "coralie-hingston": {
    "category": "Sophia's Family",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h24",
    "level": "",
@@ -796,7 +800,9 @@
   "james-hingston": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h24",
    "level": "",
@@ -1446,7 +1452,9 @@
   "nigel-hingston": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h24",
    "level": "",
@@ -1499,7 +1507,9 @@
   "paul-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h25",
    "level": "",
