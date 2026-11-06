@@ -1291,7 +1291,9 @@
   "mike-barron": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h55",
    "level": "light",
