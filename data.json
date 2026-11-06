@@ -1185,7 +1185,12 @@
   "maddison-salmon": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h51",
    "level": "heavy",
