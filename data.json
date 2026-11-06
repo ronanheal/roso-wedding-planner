@@ -1679,7 +1679,11 @@
   "savannah-gillbanks": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h13",
    "level": "light",
