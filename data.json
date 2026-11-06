@@ -1610,7 +1610,12 @@
   "sam-clark": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h9",
    "level": "heavy",
