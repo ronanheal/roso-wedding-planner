@@ -584,7 +584,10 @@
   "georgia-heal": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h46",
    "level": "light",
