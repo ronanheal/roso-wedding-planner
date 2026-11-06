@@ -294,7 +294,9 @@
   "charlotte-d-biasio": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h12",
    "level": "",
@@ -328,7 +330,9 @@
   "chloe-reynolds": {
    "category": "Sophia's Friends",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h11",
    "level": "",
@@ -708,7 +712,9 @@
   "india-hughes": {
    "category": "Sophia's Friends",
    "dietary": "Coeliac & Pescatarian",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h10",
    "level": "",
