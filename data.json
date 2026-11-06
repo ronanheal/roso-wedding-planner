@@ -1061,7 +1061,10 @@
   "kim-hurndell": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h21",
    "level": "light",
