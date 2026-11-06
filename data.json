@@ -303,7 +303,12 @@
   "cheryl-frost": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h8",
    "level": "light",
