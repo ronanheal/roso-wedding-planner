@@ -185,7 +185,9 @@
   "ben-muvae": {
    "category": "Couple Friends",
    "dietary": "Pescatarian",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h61",
    "level": "",
