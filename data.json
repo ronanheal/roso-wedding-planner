@@ -547,7 +547,9 @@
   "erin-gardiner": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h20",
    "level": "",
