@@ -199,7 +199,9 @@
   "bj-peat": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h19",
    "level": "medium",
