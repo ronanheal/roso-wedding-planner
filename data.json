@@ -40,7 +40,10 @@
   "ali-crockpot": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h42",
    "level": "light",
