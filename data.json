@@ -1010,10 +1010,12 @@
   "kat-nouata": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h25",
-   "level": "none",
+   "level": "light",
    "name": "Kat Nouata",
    "notes": "",
    "order": 48,
