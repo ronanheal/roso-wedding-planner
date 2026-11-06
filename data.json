@@ -416,7 +416,11 @@
   "daniel-carney": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Red wine"
+   ],
    "gender": "M",
    "household": "h56",
    "level": "light",
