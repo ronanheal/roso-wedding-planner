@@ -1298,7 +1298,12 @@
   "maddison-smith": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h22",
    "level": "heavy",
