@@ -1813,7 +1813,11 @@
   "sophia-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h1",
    "level": "light",
