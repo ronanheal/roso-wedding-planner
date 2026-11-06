@@ -287,7 +287,12 @@
   "charlotte-d-biasio": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h12",
    "level": "light",
