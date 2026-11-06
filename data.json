@@ -1690,7 +1690,11 @@
   "shalese-hertzke": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h58",
    "level": "light",
