@@ -1552,7 +1552,9 @@
   "peter-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h26",
    "level": "heavy",
