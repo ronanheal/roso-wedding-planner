@@ -59,7 +59,10 @@
   "amiee-gardiner": {
    "category": "Sophia's Family",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé"
+   ],
    "gender": "F",
    "household": "h20",
    "level": "light",
