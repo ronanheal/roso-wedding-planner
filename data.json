@@ -3,10 +3,14 @@
   "aleshia-hawke": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine"
+   ],
    "gender": "F",
    "household": "h21",
-   "level": "",
+   "level": "heavy",
    "name": "Alisha Hawke",
    "notes": "",
    "order": 37,
@@ -1647,7 +1651,7 @@
    "drinks": [],
    "gender": "M",
    "household": "h21",
-   "level": "",
+   "level": "heavy",
    "name": "Ryan Hawke",
    "notes": "",
    "order": 38,
