@@ -460,7 +460,11 @@
   "devon-peat": {
    "category": "Sophia's Family",
    "dietary": "Gluten & Dairy Free",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h19",
    "level": "medium",
