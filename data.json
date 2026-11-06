@@ -802,7 +802,9 @@
   "jesse-salmon": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Non-alcoholic"
+   ],
    "gender": "M",
    "household": "h51",
    "level": "none",
