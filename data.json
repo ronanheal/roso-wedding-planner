@@ -956,7 +956,10 @@
   "keira-freeson": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h3",
    "level": "medium",
