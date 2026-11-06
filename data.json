@@ -1638,7 +1638,10 @@
   "sapphyre-williams": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h2",
    "level": "",
