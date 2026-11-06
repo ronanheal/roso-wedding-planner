@@ -267,7 +267,9 @@
   "caitlean-smith": {
    "category": "Sophia's Family",
    "dietary": "Gluten & Dairy Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h23",
    "level": "",
@@ -1053,7 +1055,9 @@
   "kim-hurndell": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h21",
    "level": "",
@@ -1113,7 +1117,9 @@
   "lee": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h23",
    "level": "",
@@ -1285,7 +1291,9 @@
   "maddison-smith": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h22",
    "level": "",
