@@ -470,7 +470,9 @@
   "debbie-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h26",
    "level": "",
@@ -1553,7 +1555,7 @@
    "drinks": [],
    "gender": "M",
    "household": "h26",
-   "level": "",
+   "level": "heavy",
    "name": "Peter Nouata",
    "notes": "",
    "order": 49,
