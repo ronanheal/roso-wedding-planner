@@ -263,7 +263,12 @@
   "cassidy-frost": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h41",
    "level": "light",
@@ -531,7 +536,11 @@
   "flynn-james": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h40",
    "level": "medium",
@@ -627,7 +636,11 @@
   "harry-kidman": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h39",
    "level": "medium",
@@ -842,7 +855,12 @@
   "judah-frost": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h41",
    "level": "light",
