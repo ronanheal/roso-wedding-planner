@@ -356,7 +356,9 @@
   "chloe-reynolds": {
    "category": "Sophia's Friends",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "Non-alcoholic"
+   ],
    "gender": "F",
    "household": "h11",
    "level": "none",
