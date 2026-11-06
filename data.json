@@ -510,10 +510,14 @@
   "emma-nouata": {
    "category": "Sophia's Family",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h16",
-   "level": "heavy",
+   "level": "medium",
    "name": "Emma Nouata",
    "notes": "",
    "order": 26,
