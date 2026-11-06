@@ -880,7 +880,9 @@
   "keiran-mahoney": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h31",
    "level": "medium",
