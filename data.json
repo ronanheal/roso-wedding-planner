@@ -981,10 +981,12 @@
   "keith-proctor": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h6",
-   "level": "",
+   "level": "medium",
    "name": "Keith Proctor",
    "notes": "",
    "order": 8,
