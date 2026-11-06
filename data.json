@@ -833,7 +833,9 @@
   "jo-freeson": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "F",
    "household": "h4",
    "level": "heavy",
