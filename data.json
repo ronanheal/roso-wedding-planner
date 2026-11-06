@@ -1154,7 +1154,11 @@
   "lynn-mckenzie": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé"
+   ],
    "gender": "F",
    "household": "h50",
    "level": "light",
