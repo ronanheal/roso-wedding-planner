@@ -1148,7 +1148,10 @@
   "lucca-smith": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer"
+   ],
    "gender": "M",
    "household": "h52",
    "level": "light",
