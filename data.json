@@ -574,7 +574,9 @@
   "george-frost": {
    "category": "Sophia's Friends",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h8",
    "level": "medium",
