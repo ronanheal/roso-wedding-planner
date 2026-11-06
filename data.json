@@ -449,7 +449,10 @@
   "emma-mahoney": {
    "category": "Ronan's Friends",
    "dietary": "Severe nut allergy (can have almonds and pinenuts)",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h31",
    "level": "light",
