@@ -858,7 +858,13 @@
   "john-warwick": {
    "category": "Couple Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer",
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h7",
    "level": "medium",
