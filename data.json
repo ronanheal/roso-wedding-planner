@@ -173,7 +173,11 @@
   "billy-mcfadyen": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé"
+   ],
    "gender": "M",
    "household": "h32",
    "level": "medium",
@@ -947,7 +951,12 @@
   "kyrah-mcfadyen": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h32",
    "level": "light",
