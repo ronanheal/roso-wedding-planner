@@ -912,7 +912,10 @@
   "kara-warwick": {
    "category": "Couple Friends",
    "dietary": "Gluten & Dairy Free",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé"
+   ],
    "gender": "F",
    "household": "h7",
    "level": "",
