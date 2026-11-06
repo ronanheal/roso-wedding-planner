@@ -6,7 +6,8 @@
    "drinks": [
     "White wine",
     "Rosé",
-    "Red wine"
+    "Red wine",
+    "Cocktail"
    ],
    "gender": "F",
    "household": "h21",
@@ -1648,7 +1649,9 @@
   "ryan-hawke": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h21",
    "level": "heavy",
