@@ -215,7 +215,10 @@
   "boston-malatai": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h16",
    "level": "medium",
