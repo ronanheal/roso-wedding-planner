@@ -780,7 +780,11 @@
   "janine-proctor": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h6",
    "level": "heavy",
