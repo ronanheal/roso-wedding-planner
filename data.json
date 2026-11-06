@@ -820,7 +820,11 @@
   "jessica-salmon": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Rosé",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h53",
    "level": "medium",
@@ -1150,7 +1154,8 @@
    "dietary": "",
    "drinks": [
     "Sparkling",
-    "Beer"
+    "Beer",
+    "Cocktail"
    ],
    "gender": "M",
    "household": "h52",
