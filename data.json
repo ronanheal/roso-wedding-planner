@@ -2132,21 +2132,6 @@
    "unit": "serving",
    "unitCost": 20
   },
-  "line-03": {
-   "corkage": 0,
-   "include": true,
-   "item": "Aperol Spritz",
-   "notes": "Venue has approved jelly shots; ingredients and making by family",
-   "order": 3,
-   "qty": 50,
-   "servingsPerUnit": 1,
-   "stage": "Cocktail hour",
-   "status": "ESTIMATE",
-   "supplier": "Family",
-   "type": "Cocktail",
-   "unit": "batch",
-   "unitCost": 20
-  },
   "line-04": {
    "corkage": 17,
    "include": true,
