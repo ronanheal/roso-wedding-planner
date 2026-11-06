@@ -656,7 +656,13 @@
   "hamish-marr": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Beer",
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h18",
    "level": "heavy",
@@ -1787,7 +1793,13 @@
   "sharon-marr": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Beer",
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h18",
    "level": "heavy",
