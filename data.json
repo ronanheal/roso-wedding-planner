@@ -1318,7 +1318,9 @@
   "porsche-commons": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h29",
    "level": "medium",
