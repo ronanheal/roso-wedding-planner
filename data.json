@@ -22,6 +22,7 @@
    "drinks": [
     "Sparkling",
     "Beer",
+    "Red wine",
     "Cocktail"
    ],
    "gender": "M",
@@ -138,6 +139,7 @@
    "drinks": [
     "Sparkling",
     "White wine",
+    "Rosé",
     "Cocktail"
    ],
    "gender": "F",
