@@ -61,7 +61,9 @@
   "amiee-gardiner": {
    "category": "Sophia's Family",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h20",
    "level": "",
