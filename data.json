@@ -446,7 +446,8 @@
    "drinks": [
     "Sparkling",
     "White wine",
-    "Rosé"
+    "Rosé",
+    "Cocktail"
    ],
    "gender": "F",
    "household": "h37",
@@ -1149,7 +1150,10 @@
   "marcus-hertzke": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h37",
    "level": "heavy",
