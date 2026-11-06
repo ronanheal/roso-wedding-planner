@@ -1527,7 +1527,11 @@
   "ronan-heal": {
    "category": "Ronan's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h1",
    "level": "medium",
