@@ -93,7 +93,10 @@
   "andy-daniels": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h57",
    "level": "medium",
