@@ -226,7 +226,11 @@
   "bruno-quinn": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h36",
    "level": "medium",
