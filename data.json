@@ -1771,7 +1771,11 @@
   "tim-heal": {
    "category": "Ronan's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "Cocktail"
+   ],
    "gender": "M",
    "household": "h48",
    "level": "light",
