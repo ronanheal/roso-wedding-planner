@@ -135,7 +135,11 @@
   "bella-hertzke": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h30",
    "level": "light",
