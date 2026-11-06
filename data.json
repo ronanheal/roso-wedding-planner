@@ -1127,7 +1127,9 @@
   "lorne-frost": {
    "category": "Sophia's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h8",
    "level": "medium",
