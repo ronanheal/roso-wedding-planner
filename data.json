@@ -1672,7 +1672,9 @@
   "tessa-takerai": {
    "category": "Ronan's Friends",
    "dietary": "Pescatarian",
-   "drinks": [],
+   "drinks": [
+    "White wine"
+   ],
    "gender": "F",
    "household": "h33",
    "level": "light",
