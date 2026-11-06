@@ -617,7 +617,10 @@
   "greg-thomas": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Red wine"
+   ],
    "gender": "M",
    "household": "h59",
    "level": "medium",
