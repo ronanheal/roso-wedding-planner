@@ -2067,7 +2067,12 @@
   "vanessa-muvae": {
    "category": "Couple Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h61",
    "level": "light",
