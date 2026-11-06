@@ -121,10 +121,12 @@
   "artemis-hingston": {
    "category": "Sophia's Family",
    "dietary": "Vegetarian",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "X",
    "household": "h24",
-   "level": "",
+   "level": "light",
    "name": "Artemis Hingston",
    "notes": "",
    "order": 46,
