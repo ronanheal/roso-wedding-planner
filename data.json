@@ -95,7 +95,6 @@
    "dietary": "",
    "drinks": [
     "Sparkling",
-    "White wine",
     "Rosé",
     "Red wine",
     "Cocktail"
@@ -1733,7 +1732,13 @@
   "shelly-daniels": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "White wine",
+    "Rosé",
+    "Red wine",
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h57",
    "level": "heavy",
