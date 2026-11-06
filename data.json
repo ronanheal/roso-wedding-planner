@@ -686,10 +686,12 @@
   "hunter-gillbanks": {
    "category": "Sophia's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h13",
-   "level": "",
+   "level": "medium",
    "name": "Hunter Gillbanks",
    "notes": "",
    "order": 22,
