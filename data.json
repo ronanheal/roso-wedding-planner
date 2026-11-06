@@ -1351,7 +1351,9 @@
   "mike-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h14",
    "level": "heavy",
