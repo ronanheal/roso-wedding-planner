@@ -130,7 +130,9 @@
   "barbra-nouata": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h17",
    "level": "",
@@ -204,7 +206,9 @@
   "bj-peat": {
    "category": "Sophia's Family",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h19",
    "level": "",
@@ -465,7 +469,9 @@
   "devon-peat": {
    "category": "Sophia's Family",
    "dietary": "Gluten & Dairy Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h19",
    "level": "",
@@ -664,7 +670,9 @@
   "hamish-marr": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "M",
    "household": "h18",
    "level": "",
@@ -1790,7 +1798,9 @@
   "sharon-marr": {
    "category": "Sophia's Family",
    "dietary": "Gluten Free",
-   "drinks": [],
+   "drinks": [
+    "Sparkling"
+   ],
    "gender": "F",
    "household": "h18",
    "level": "",
