@@ -411,10 +411,12 @@
   "coralie-hingston": {
    "category": "Sophia's Family",
    "dietary": "Coeliac",
-   "drinks": [],
+   "drinks": [
+    "Cocktail"
+   ],
    "gender": "F",
    "household": "h24",
-   "level": "",
+   "level": "medium",
    "name": "Coralie Hingston",
    "notes": "",
    "order": 43,
