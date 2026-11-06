@@ -1552,7 +1552,13 @@
   "rudi-hertzke": {
    "category": "Ronan's Additional",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Sparkling",
+    "Beer",
+    "White wine",
+    "Rosé",
+    "Red wine"
+   ],
    "gender": "M",
    "household": "h58",
    "level": "heavy",
