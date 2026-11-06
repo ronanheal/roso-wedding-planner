@@ -1332,7 +1332,9 @@
   "peter-watkins": {
    "category": "Ronan's Friends",
    "dietary": "",
-   "drinks": [],
+   "drinks": [
+    "Beer"
+   ],
    "gender": "M",
    "household": "h34",
    "level": "medium",
