@@ -2484,14 +2484,14 @@
   }
  },
  "settings": {
-  "assumeLevel": "medium",
-  "buffer": 10,
   "perLevel": {
    "heavy": 10,
    "light": 3,
    "medium": 6
   },
+  "assumeLevel": "medium",
+  "toast": false,
   "thirst": 100,
-  "toast": true
+  "buffer": 10
  }
 }
