@@ -2115,7 +2115,7 @@
   },
   "line-04": {
    "corkage": 17,
-   "include": false,
+   "include": true,
    "item": "Deutz Brut",
    "notes": "4 boxes but only 20 bottles needed",
    "order": 4,
