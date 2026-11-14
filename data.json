@@ -2593,10 +2593,6 @@
    "L3-a-10": "debbie-nouata",
    "L1-b-5": "judah-frost",
    "L1-b-6": "cassidy-frost",
-   "L1-b-7": "emma-hertzke",
-   "L1-b-8": "marcus-hertzke",
-   "L1-b-9": "flynn-james",
-   "L1-b-10": "harry-kidman",
    "L1-a-0": "liam-salmon",
    "L1-a-11": "jake-blow",
    "L1-a-10": "samuel-peez",
@@ -2605,7 +2601,11 @@
    "L1-a-7": "tessa-takerai",
    "L1-a-6": "dane-takerai",
    "L1-a-5": "peter-watkins",
-   "L1-a-4": "ali-crockpot"
+   "L1-a-4": "ali-crockpot",
+   "L1-b-11": "harry-kidman",
+   "L1-b-10": "flynn-james",
+   "L1-b-9": "marcus-hertzke",
+   "L1-b-8": "emma-hertzke"
   },
   "locked": {
    "alesi-hertzke": true,
