@@ -2939,7 +2939,6 @@
    "L2-b-3": "daniel-carney",
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
-   "L4-b-2": "george-frost",
    "L3-a-5": "coralie-hingston",
    "B-2": "georgia-heal",
    "L3-a-6": "barbra-nouata",
@@ -3002,7 +3001,8 @@
    "L4-b-11": "india-hughes",
    "L4-b-10": "keira-freeson",
    "L4-a-10": "charlotte-d-biasio",
-   "L4-b-9": "siena-frost"
+   "L4-b-9": "siena-frost",
+   "L4-b-8": "george-frost"
   },
   "locked": {
    "alesi-hertzke": true,
