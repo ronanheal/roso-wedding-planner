@@ -2746,7 +2746,6 @@
    "L4-a-8": "sharn-charmers",
    "L4-a-10": "cheryl-frost",
    "L4-a-11": "lorne-frost",
-   "L1-a-1": "savannah-gillbanks",
    "L1-a-2": "hunter-gillbanks",
    "L1-b-2": "bj-peat",
    "L1-b-1": "devon-peat",
@@ -2761,7 +2760,8 @@
    "L1-a-9": "dane-takerai",
    "L1-b-8": "bella-hertzke",
    "L1-a-7": "porsche-commons",
-   "L1-b-7": "emma-mahoney"
+   "L1-b-7": "emma-mahoney",
+   "L1-a-6": "savannah-gillbanks"
   },
   "locked": {
    "alesi-hertzke": true,
