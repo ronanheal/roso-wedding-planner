@@ -2633,69 +2633,6 @@
     "sapphyre-williams": true,
     "sophia-nouata": true
    }
-  },
-  "test-mwg1xjvb": {
-   "name": "test",
-   "savedAt": "2026-11-14T06:55:48.695Z",
-   "config": {
-    "bridal": 10,
-    "L1": {
-     "bottom": false,
-     "side": 12,
-     "top": false
-    },
-    "L2": {
-     "side": 12,
-     "top": false,
-     "bottom": false
-    },
-    "L3": {
-     "bottom": false,
-     "side": 12,
-     "top": false
-    },
-    "L4": {
-     "bottom": false,
-     "side": 12,
-     "top": false
-    }
-   },
-   "seats": {
-    "B-0": "keiran-mahoney",
-    "B-1": "alesi-hertzke",
-    "B-3": "josh-commons",
-    "B-4": "ronan-heal",
-    "B-5": "sophia-nouata",
-    "B-6": "emma-nouata",
-    "B-7": "olivia-nouata",
-    "B-8": "sapphyre-williams",
-    "B-9": "libby-proctor",
-    "L2-a-0": "chris-heal",
-    "L2-b-0": "rebekah-heal",
-    "L3-a-0": "marie-nouata",
-    "L3-b-0": "mike-nouata",
-    "B-2": "georgia-heal",
-    "L3-a-1": "sharon-marr",
-    "L3-a-2": "hamish-marr",
-    "L3-b-1": "john-warwick",
-    "L3-b-2": "kara-warwick"
-   },
-   "locked": {
-    "alesi-hertzke": true,
-    "chris-heal": true,
-    "emma-nouata": true,
-    "georgia-heal": true,
-    "josh-commons": true,
-    "keiran-mahoney": true,
-    "libby-proctor": true,
-    "marie-nouata": true,
-    "mike-nouata": true,
-    "olivia-nouata": true,
-    "rebekah-heal": true,
-    "ronan-heal": true,
-    "sapphyre-williams": true,
-    "sophia-nouata": true
-   }
   }
  },
  "seating": {
