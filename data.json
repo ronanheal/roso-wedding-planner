@@ -2971,7 +2971,6 @@
    "L4-b-7": "troy-freeson",
    "L4-b-8": "jo-freeson",
    "L4-a-9": "haley-charmers",
-   "L4-b-9": "sam-clark",
    "L4-a-8": "sharn-charmers",
    "L4-b-5": "louise-peat",
    "L4-b-6": "andrew-peat",
@@ -2980,7 +2979,7 @@
    "L1-a-11": "lorne-frost",
    "L1-b-11": "keith-proctor",
    "L1-b-10": "janine-proctor",
-   "L1-b-9": "savannah-gillbanks",
+   "L1-b-9": "sam-clark",
    "L1-b-3": "liam-salmon",
    "L1-b-2": "jesse-salmon",
    "L1-a-2": "lucca-smith",
@@ -3007,7 +3006,8 @@
    "L4-a-11": "harry-kidman",
    "L4-b-11": "flynn-james",
    "L1-a-10": "cheryl-frost",
-   "L4-b-10": "hunter-gillbanks"
+   "L4-b-10": "hunter-gillbanks",
+   "L4-b-9": "savannah-gillbanks"
   },
   "locked": {
    "alesi-hertzke": true,
