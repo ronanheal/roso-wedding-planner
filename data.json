@@ -2763,10 +2763,10 @@
    "L1-a-4": "flynn-james",
    "L1-b-4": "harry-kidman",
    "L1-a-0": "jesse-salmon",
-   "L1-b-0": "maddison-salmon",
-   "L1-b-1": "lucca-smith",
+   "L1-b-0": "lucca-smith",
    "L1-a-1": "liam-salmon",
-   "L1-a-2": "bruno-quinn"
+   "L1-a-2": "bruno-quinn",
+   "L1-b-1": "maddison-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
