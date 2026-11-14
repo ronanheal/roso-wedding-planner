@@ -2738,9 +2738,6 @@
    "L4-a-8": "sharn-charmers",
    "L4-a-10": "cheryl-frost",
    "L4-a-11": "lorne-frost",
-   "L1-a-11": "luca-ensor",
-   "L1-b-11": "james-pope",
-   "L1-b-10": "samuel-peez",
    "L2-b-6": "christen-salmon",
    "L2-a-6": "steve-anderson",
    "L2-a-11": "greg-thomas",
@@ -2755,15 +2752,9 @@
    "L1-a-2": "bruno-quinn",
    "L1-b-2": "ali-crockpot",
    "L2-b-9": "lynn-mckenzie",
-   "L1-a-10": "harry-kidman",
-   "L1-a-9": "jake-blow",
-   "L1-b-9": "flynn-james",
-   "L1-a-8": "hunter-gillbanks",
    "L1-b-8": "bj-peat",
-   "L1-a-7": "savannah-gillbanks",
    "L1-b-7": "devon-peat",
-   "L1-b-6": "emma-mahoney",
-   "L1-b-5": "bella-hertzke"
+   "L1-b-6": "emma-mahoney"
   },
   "locked": {
    "alesi-hertzke": true,
