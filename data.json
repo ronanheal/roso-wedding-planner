@@ -3560,7 +3560,6 @@
    "L3-a-6": "barbra-nouata",
    "L3-a-7": "ryan-hawke",
    "L3-a-8": "aleshia-hawke",
-   "L1-a-0": "luca-ensor",
    "L1-a-10": "samuel-peez",
    "L1-a-9": "bella-hertzke",
    "L1-a-8": "emma-mahoney",
@@ -3626,7 +3625,8 @@
    "L4-a-10": "troy-freeson",
    "L4-a-11": "jo-freeson",
    "L4-a-8": "james-hingston",
-   "L1-b-0": "liam-salmon"
+   "L1-b-0": "luca-ensor",
+   "L1-a-0": "liam-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
