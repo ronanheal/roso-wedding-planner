@@ -2586,8 +2586,6 @@
    "L3-b-3": "erin-gardiner",
    "L3-a-4": "nigel-hingston",
    "L3-a-5": "coralie-hingston",
-   "L3-a-10": "sean-hurndell",
-   "L3-a-11": "debbie-nouata",
    "L2-a-5": "jessica-salmon",
    "L2-a-9": "jacqueline-bennett",
    "B-2": "georgia-heal",
@@ -2606,7 +2604,9 @@
    "L3-b-7": "peter-nouata",
    "L3-a-6": "barbra-nouata",
    "L3-a-7": "ryan-hawke",
-   "L3-a-8": "aleshia-hawke"
+   "L3-a-8": "aleshia-hawke",
+   "L3-a-9": "sean-hurndell",
+   "L3-a-10": "debbie-nouata"
   },
   "locked": {
    "alesi-hertzke": true,
