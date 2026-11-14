@@ -2560,7 +2560,6 @@
    "L4-a-3": "chloe-reynolds",
    "L4-b-3": "bruno-quinn",
    "L4-a-4": "india-hughes",
-   "L1-b-0": "luca-ensor",
    "L4-a-5": "sam-clark",
    "L3-b-4": "amiee-gardiner",
    "L3-b-3": "erin-gardiner",
@@ -2605,7 +2604,8 @@
    "L1-b-5": "porsche-commons",
    "L1-b-4": "kyrah-mcfadyen",
    "L1-b-3": "billy-mcfadyen",
-   "L1-b-2": "james-pope"
+   "L1-b-2": "james-pope",
+   "L1-b-1": "luca-ensor"
   },
   "locked": {
    "alesi-hertzke": true,
