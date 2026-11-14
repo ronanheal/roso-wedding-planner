@@ -2718,7 +2718,6 @@
    "L1-a-6": "dane-takerai",
    "L1-a-5": "peter-watkins",
    "L4-b-4": "bj-peat",
-   "L4-b-5": "devon-peat",
    "L4-b-6": "artemis-hingston",
    "L4-b-7": "lee",
    "L4-b-8": "caitlean-smith",
@@ -2753,7 +2752,8 @@
    "L2-b-7": "liam-salmon",
    "L2-b-8": "jesse-salmon",
    "L2-a-8": "lucca-smith",
-   "L2-a-7": "maddison-salmon"
+   "L2-a-7": "maddison-salmon",
+   "L1-a-3": "devon-peat"
   },
   "locked": {
    "alesi-hertzke": true,
