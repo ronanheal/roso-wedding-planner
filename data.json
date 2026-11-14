@@ -2950,7 +2950,6 @@
    "L3-b-5": "amiee-gardiner",
    "L3-b-6": "kim-hurndell",
    "L3-b-8": "peter-nouata",
-   "L3-b-7": "debbie-nouata",
    "L3-a-9": "maddison-smith",
    "L3-a-10": "caitlean-smith",
    "L3-b-9": "sean-hurndell",
@@ -3002,7 +3001,8 @@
    "L4-a-7": "rory-gardiner",
    "L4-a-6": "artemis-hingston",
    "L4-b-5": "james-hingston",
-   "L4-a-0": "barbra-nouata"
+   "L4-a-0": "barbra-nouata",
+   "L4-b-0": "debbie-nouata"
   },
   "locked": {
    "alesi-hertzke": true,
