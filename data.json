@@ -2690,8 +2690,6 @@
    "L2-b-2": "andy-daniels",
    "L2-b-3": "daniel-carney",
    "L2-b-4": "margot-carney",
-   "L2-a-3": "kim-macleod",
-   "L2-a-4": "paul-macleod",
    "L2-b-5": "christen-salmon",
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
@@ -2751,7 +2749,9 @@
    "L1-b-2": "ali-crockpot",
    "L2-b-9": "lynn-mckenzie",
    "L2-a-6": "jessica-salmon",
-   "L2-b-6": "tim-heal"
+   "L2-b-6": "tim-heal",
+   "L2-a-8": "paul-macleod",
+   "L2-a-7": "kim-macleod"
   },
   "locked": {
    "alesi-hertzke": true,
