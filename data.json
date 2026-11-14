@@ -2734,7 +2734,6 @@
    "L4-a-8": "sharn-charmers",
    "L4-a-10": "cheryl-frost",
    "L4-a-11": "lorne-frost",
-   "L2-b-8": "lynn-mckenzie",
    "L1-a-0": "steve-anderson",
    "L1-a-1": "jessica-salmon",
    "L1-b-0": "christen-salmon",
@@ -2745,7 +2744,8 @@
    "L2-b-5": "rudi-hertzke",
    "L2-a-6": "kim-macleod",
    "L2-b-6": "jacqueline-bennett",
-   "L2-a-7": "paul-macleod"
+   "L2-a-7": "paul-macleod",
+   "L2-b-7": "lynn-mckenzie"
   },
   "locked": {
    "alesi-hertzke": true,
