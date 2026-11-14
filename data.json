@@ -2968,7 +2968,6 @@
    "L4-a-2": "india-hughes",
    "L4-b-4": "finn-gardiner",
    "L4-a-5": "rory-gardiner",
-   "L4-b-5": "louise-peat",
    "L1-a-11": "lorne-frost",
    "L1-b-11": "keith-proctor",
    "L1-b-10": "janine-proctor",
@@ -3007,7 +3006,8 @@
    "L4-a-6": "peter-watkins",
    "L4-b-8": "porsche-commons",
    "L1-b-7": "troy-freeson",
-   "L1-b-6": "andrew-peat"
+   "L1-b-6": "andrew-peat",
+   "L1-b-5": "louise-peat"
   },
   "locked": {
    "alesi-hertzke": true,
