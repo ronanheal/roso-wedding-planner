@@ -3148,7 +3148,6 @@
    "L3-b-9": "sean-hurndell",
    "L4-b-10": "keith-proctor",
    "L4-b-11": "janine-proctor",
-   "L4-a-10": "lorne-frost",
    "L2-a-0": "chris-heal",
    "L1-b-2": "billy-mcfadyen",
    "L1-b-3": "kyrah-mcfadyen",
@@ -3169,11 +3168,12 @@
    "L4-a-5": "india-hughes",
    "L4-a-6": "chloe-reynolds",
    "L4-b-8": "artemis-hingston",
-   "L4-a-11": "cheryl-frost",
    "L2-a-8": "louise-peat",
    "L4-a-8": "lee",
-   "L3-b-10": "jo-freeson",
-   "L3-b-11": "troy-freeson"
+   "L3-b-10": "lorne-frost",
+   "L3-b-11": "cheryl-frost",
+   "L4-a-10": "jo-freeson",
+   "L4-a-11": "troy-freeson"
   },
   "locked": {
    "alesi-hertzke": true,
