@@ -2690,7 +2690,6 @@
    "L2-b-2": "andy-daniels",
    "L2-b-3": "daniel-carney",
    "L2-b-4": "margot-carney",
-   "L2-b-5": "christen-salmon",
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
    "L4-b-1": "siena-frost",
@@ -2739,13 +2738,14 @@
    "L2-a-10": "nicola-thomas",
    "L2-b-10": "shalese-hertzke",
    "L2-b-11": "rudi-hertzke",
-   "L2-b-6": "tim-heal",
    "L2-a-8": "paul-macleod",
    "L2-a-7": "kim-macleod",
    "L2-b-7": "jacqueline-bennett",
    "L2-b-8": "lynn-mckenzie",
    "L1-a-0": "steve-anderson",
-   "L1-a-1": "jessica-salmon"
+   "L1-a-1": "jessica-salmon",
+   "L1-b-0": "christen-salmon",
+   "L1-b-1": "tim-heal"
   },
   "locked": {
    "alesi-hertzke": true,
