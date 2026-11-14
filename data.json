@@ -2697,7 +2697,7 @@
    "L2-b-5": "tim-heal",
    "L2-b-11": "greg-thomas",
    "L2-a-11": "rudi-hertzke",
-   "L2-a-10": "shalese-hertzke",
+   "L2-a-10": "bruno-quinn",
    "L2-b-10": "nicola-thomas",
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
@@ -2763,9 +2763,9 @@
    "L1-a-0": "jesse-salmon",
    "L1-b-0": "lucca-smith",
    "L1-a-1": "liam-salmon",
-   "L1-a-2": "bruno-quinn",
    "L1-b-1": "maddison-salmon",
-   "L1-b-2": "ali-crockpot"
+   "L1-b-2": "ali-crockpot",
+   "L1-a-2": "shalese-hertzke"
   },
   "locked": {
    "alesi-hertzke": true,
