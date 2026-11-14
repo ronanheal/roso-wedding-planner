@@ -2971,7 +2971,6 @@
    "L4-a-5": "rory-gardiner",
    "L4-b-5": "louise-peat",
    "L4-b-6": "andrew-peat",
-   "L4-a-6": "vanessa-muvae",
    "L1-a-11": "harry-kidman",
    "L1-b-11": "flynn-james",
    "L1-b-10": "hunter-gillbanks",
@@ -3002,7 +3001,8 @@
    "L2-b-10": "janine-proctor",
    "L2-b-9": "sam-clark",
    "L2-b-8": "jo-freeson",
-   "L2-b-7": "troy-freeson"
+   "L2-b-7": "troy-freeson",
+   "L1-b-7": "vanessa-muvae"
   },
   "locked": {
    "alesi-hertzke": true,
