@@ -2742,7 +2742,6 @@
    "L1-a-10": "jake-blow",
    "L1-b-11": "james-pope",
    "L1-b-10": "samuel-peez",
-   "L1-a-7": "porsche-commons",
    "L1-b-7": "emma-mahoney",
    "L1-a-6": "savannah-gillbanks",
    "L1-b-5": "bj-peat",
@@ -2761,11 +2760,12 @@
    "L1-a-2": "bruno-quinn",
    "L1-b-2": "ali-crockpot",
    "L2-b-9": "lynn-mckenzie",
-   "L1-a-5": "hunter-gillbanks",
+   "L1-a-5": "porsche-commons",
    "L1-b-3": "peter-watkins",
    "L1-a-3": "dane-takerai",
    "L1-a-4": "tessa-takerai",
-   "L1-b-4": "bella-hertzke"
+   "L1-b-4": "bella-hertzke",
+   "L1-a-7": "hunter-gillbanks"
   },
   "locked": {
    "alesi-hertzke": true,
