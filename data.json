@@ -2870,11 +2870,11 @@
    "L1-a-3": "maddison-salmon",
    "L2-a-5": "jacqueline-bennett",
    "L2-a-6": "lynn-mckenzie",
-   "L2-b-5": "greg-thomas",
-   "L2-b-6": "nicola-thomas",
    "L1-a-4": "ali-crockpot",
    "L2-a-11": "shalese-hertzke",
-   "L2-a-10": "rudi-hertzke"
+   "L2-a-10": "rudi-hertzke",
+   "L2-b-10": "greg-thomas",
+   "L2-b-11": "nicola-thomas"
   },
   "locked": {
    "alesi-hertzke": true,
