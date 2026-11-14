@@ -2969,7 +2969,6 @@
    "L4-b-4": "finn-gardiner",
    "L4-a-5": "rory-gardiner",
    "L4-b-7": "troy-freeson",
-   "L4-b-8": "jo-freeson",
    "L4-b-5": "louise-peat",
    "L4-b-6": "andrew-peat",
    "L1-a-11": "lorne-frost",
@@ -2993,7 +2992,7 @@
    "L2-a-3": "kim-macleod",
    "L2-a-4": "paul-macleod",
    "L1-a-8": "sharn-charmers",
-   "L1-b-8": "porsche-commons",
+   "L1-b-8": "jo-freeson",
    "L1-a-7": "ben-muvae",
    "L1-a-6": "vanessa-muvae",
    "L2-a-9": "lynn-mckenzie",
@@ -3007,7 +3006,8 @@
    "L1-a-9": "haley-charmers",
    "L4-a-8": "kyrah-mcfadyen",
    "L4-a-7": "billy-mcfadyen",
-   "L4-a-6": "peter-watkins"
+   "L4-a-6": "peter-watkins",
+   "L4-b-8": "porsche-commons"
   },
   "locked": {
    "alesi-hertzke": true,
