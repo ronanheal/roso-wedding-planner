@@ -2962,7 +2962,6 @@
    "L1-a-6": "peter-watkins",
    "L1-a-9": "jacqueline-bennett",
    "L2-a-11": "lorne-frost",
-   "L2-b-11": "keith-proctor",
    "L2-a-10": "cheryl-frost",
    "L2-a-9": "haley-charmers",
    "L2-a-8": "sharn-charmers",
@@ -3002,7 +3001,8 @@
    "L3-a-4": "amiee-gardiner",
    "L3-b-3": "coralie-hingston",
    "L3-b-4": "nigel-hingston",
-   "L3-a-5": "kim-hurndell"
+   "L3-a-5": "kim-hurndell",
+   "L3-b-11": "keith-proctor"
   },
   "locked": {
    "alesi-hertzke": true,
