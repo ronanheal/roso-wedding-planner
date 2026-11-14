@@ -2864,7 +2864,6 @@
    "L1-b-8": "savannah-gillbanks",
    "L1-a-9": "bj-peat",
    "L1-b-9": "hunter-gillbanks",
-   "L1-a-10": "harry-kidman",
    "L1-b-10": "flynn-james",
    "L1-a-0": "liam-salmon",
    "L1-a-1": "lucca-smith",
@@ -2872,7 +2871,8 @@
    "L1-a-4": "peter-watkins",
    "L1-a-3": "ali-crockpot",
    "L1-a-7": "kyrah-mcfadyen",
-   "L1-a-6": "billy-mcfadyen"
+   "L1-a-6": "billy-mcfadyen",
+   "L1-a-11": "harry-kidman"
   },
   "locked": {
    "alesi-hertzke": true,
