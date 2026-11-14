@@ -2714,7 +2714,6 @@
    "L3-a-6": "barbra-nouata",
    "L3-a-7": "ryan-hawke",
    "L3-a-8": "aleshia-hawke",
-   "L1-a-0": "liam-salmon",
    "L1-a-7": "tessa-takerai",
    "L1-a-6": "dane-takerai",
    "L1-a-5": "peter-watkins",
@@ -2756,7 +2755,8 @@
    "L1-b-0": "bruno-quinn",
    "L1-a-9": "bella-hertzke",
    "L1-a-10": "emma-hertzke",
-   "L1-a-4": "ali-crockpot"
+   "L1-a-4": "ali-crockpot",
+   "L2-a-7": "liam-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
