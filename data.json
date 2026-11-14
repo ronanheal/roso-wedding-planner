@@ -2695,7 +2695,6 @@
    "L2-a-6": "steve-anderson",
    "L2-b-6": "christen-salmon",
    "L2-b-5": "tim-heal",
-   "L2-a-11": "rudi-hertzke",
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
    "L4-b-1": "siena-frost",
@@ -2766,7 +2765,8 @@
    "L1-a-0": "lynn-mckenzie",
    "L1-b-0": "jacqueline-bennett",
    "L2-a-7": "nicola-thomas",
-   "L2-a-8": "greg-thomas"
+   "L2-a-8": "greg-thomas",
+   "L2-b-7": "rudi-hertzke"
   },
   "locked": {
    "alesi-hertzke": true,
