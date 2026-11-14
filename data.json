@@ -2594,8 +2594,7 @@
    "L4-a-5": "sam-clark",
    "L3-b-4": "amiee-gardiner",
    "L3-b-3": "erin-gardiner",
-   "L3-a-4": "kim-hurndell",
-   "L3-a-3": "nigel-hingston",
+   "L3-a-4": "nigel-hingston",
    "L3-a-5": "coralie-hingston",
    "L3-a-7": "barbra-nouata",
    "L3-b-7": "artemis-hingston",
@@ -2614,7 +2613,8 @@
    "L2-a-9": "jacqueline-bennett",
    "B-2": "georgia-heal",
    "L3-b-5": "bj-peat",
-   "L3-b-6": "devon-peat"
+   "L3-b-6": "devon-peat",
+   "L3-a-3": "kim-hurndell"
   },
   "locked": {
    "alesi-hertzke": true,
