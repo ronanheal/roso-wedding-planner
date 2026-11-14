@@ -2717,7 +2717,6 @@
    "L1-a-6": "dane-takerai",
    "L1-a-5": "peter-watkins",
    "L4-b-3": "boston-malatai",
-   "L4-a-3": "chloe-reynolds",
    "L3-a-4": "nigel-hingston",
    "L3-a-3": "paul-nouata",
    "L3-b-3": "kat-nouata",
@@ -2753,7 +2752,8 @@
    "L3-b-10": "lee",
    "L3-b-11": "james-hingston",
    "L3-a-11": "artemis-hingston",
-   "L4-a-4": "scarlett-warwick"
+   "L4-a-4": "scarlett-warwick",
+   "L4-a-1": "chloe-reynolds"
   },
   "locked": {
    "alesi-hertzke": true,
