@@ -2589,7 +2589,6 @@
    "L3-a-4": "nigel-hingston",
    "L3-a-5": "coralie-hingston",
    "L3-a-7": "barbra-nouata",
-   "L4-b-9": "finn-gardiner",
    "L3-a-10": "sean-hurndell",
    "L3-a-11": "debbie-nouata",
    "L3-b-11": "peter-nouata",
@@ -2606,7 +2605,8 @@
    "L4-a-6": "maddison-smith",
    "L4-a-7": "james-hingston",
    "L4-a-8": "lee",
-   "L4-a-10": "rory-gardiner"
+   "L4-a-10": "rory-gardiner",
+   "L4-a-9": "finn-gardiner"
   },
   "locked": {
    "alesi-hertzke": true,
