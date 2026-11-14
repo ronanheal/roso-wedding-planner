@@ -2741,7 +2741,6 @@
    "L2-b-8": "jesse-salmon",
    "L2-a-8": "lucca-smith",
    "L2-a-7": "maddison-salmon",
-   "L1-a-3": "harry-kidman",
    "L1-a-2": "bj-peat",
    "L3-a-9": "maddison-smith",
    "L3-a-10": "caitlean-smith",
@@ -2772,7 +2771,9 @@
    "L1-b-11": "samuel-peez",
    "L1-a-11": "ali-crockpot",
    "L1-a-1": "jake-blow",
-   "L1-a-0": "flynn-james"
+   "L1-a-0": "flynn-james",
+   "L1-a-4": "harry-kidman",
+   "L1-a-3": "devon-peat"
   },
   "locked": {
    "alesi-hertzke": true,
