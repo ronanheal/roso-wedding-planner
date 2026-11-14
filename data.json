@@ -2845,7 +2845,6 @@
    "L2-a-3": "margot-carney",
    "L2-a-5": "jessica-salmon",
    "L2-a-6": "steve-anderson",
-   "L2-b-5": "tim-heal",
    "L2-b-6": "christen-salmon",
    "L2-a-9": "jacqueline-bennett",
    "L2-b-9": "lynn-mckenzie",
@@ -2870,7 +2869,8 @@
    "L1-a-5": "peter-watkins",
    "L1-a-4": "ali-crockpot",
    "L1-a-3": "maddison-salmon",
-   "L1-a-2": "lucca-smith"
+   "L1-a-2": "lucca-smith",
+   "L1-b-0": "tim-heal"
   },
   "locked": {
    "alesi-hertzke": true,
