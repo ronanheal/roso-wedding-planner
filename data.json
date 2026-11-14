@@ -2749,7 +2749,6 @@
    "L1-a-7": "porsche-commons",
    "L1-b-7": "emma-mahoney",
    "L1-a-6": "savannah-gillbanks",
-   "L1-a-5": "hunter-gillbanks",
    "L1-b-5": "bj-peat",
    "L1-b-6": "devon-peat",
    "L2-b-6": "christen-salmon",
@@ -2765,7 +2764,8 @@
    "L1-a-1": "liam-salmon",
    "L1-b-1": "maddison-salmon",
    "L1-a-2": "bruno-quinn",
-   "L1-b-2": "ali-crockpot"
+   "L1-b-2": "ali-crockpot",
+   "L1-a-3": "hunter-gillbanks"
   },
   "locked": {
    "alesi-hertzke": true,
