@@ -2961,8 +2961,6 @@
    "L1-a-7": "billy-mcfadyen",
    "L1-a-6": "peter-watkins",
    "L1-a-9": "jacqueline-bennett",
-   "L1-b-6": "andrew-peat",
-   "L1-b-5": "louise-peat",
    "L4-a-11": "chloe-reynolds",
    "L4-b-11": "india-hughes",
    "L4-b-10": "keira-freeson",
@@ -3002,7 +3000,9 @@
    "L3-b-8": "jo-freeson",
    "L3-b-7": "troy-freeson",
    "L3-a-7": "ben-muvae",
-   "L3-a-6": "vanessa-muvae"
+   "L3-a-6": "vanessa-muvae",
+   "L3-b-6": "andrew-peat",
+   "L3-b-5": "louise-peat"
   },
   "locked": {
    "alesi-hertzke": true,
