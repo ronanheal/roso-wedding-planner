@@ -2941,7 +2941,6 @@
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
    "L4-b-1": "siena-frost",
-   "L4-b-0": "keira-freeson",
    "L4-b-2": "george-frost",
    "L3-a-5": "coralie-hingston",
    "B-2": "georgia-heal",
@@ -3002,7 +3001,8 @@
    "L1-b-6": "andrew-peat",
    "L1-b-5": "louise-peat",
    "L4-a-11": "chloe-reynolds",
-   "L4-b-11": "india-hughes"
+   "L4-b-11": "india-hughes",
+   "L4-b-10": "keira-freeson"
   },
   "locked": {
    "alesi-hertzke": true,
