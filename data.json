@@ -2961,8 +2961,6 @@
    "L1-a-7": "billy-mcfadyen",
    "L1-a-6": "peter-watkins",
    "L1-a-9": "jacqueline-bennett",
-   "L2-a-9": "haley-charmers",
-   "L2-a-8": "sharn-charmers",
    "L2-a-7": "ben-muvae",
    "L2-b-8": "jo-freeson",
    "L2-b-7": "troy-freeson",
@@ -3002,7 +3000,9 @@
    "L3-a-11": "lorne-frost",
    "L3-b-10": "janine-proctor",
    "L3-a-10": "cheryl-frost",
-   "L3-b-9": "sam-clark"
+   "L3-b-9": "sam-clark",
+   "L3-a-9": "haley-charmers",
+   "L3-a-8": "sharn-charmers"
   },
   "locked": {
    "alesi-hertzke": true,
