@@ -2755,9 +2755,6 @@
    "L1-a-2": "bruno-quinn",
    "L1-b-2": "ali-crockpot",
    "L2-b-9": "lynn-mckenzie",
-   "L1-b-3": "peter-watkins",
-   "L1-a-3": "dane-takerai",
-   "L1-b-4": "bella-hertzke",
    "L1-a-10": "harry-kidman",
    "L1-a-9": "jake-blow",
    "L1-b-9": "flynn-james",
@@ -2767,7 +2764,10 @@
    "L1-b-7": "devon-peat",
    "L1-a-6": "porsche-commons",
    "L1-b-6": "emma-mahoney",
-   "L1-a-5": "tessa-takerai"
+   "L1-a-5": "tessa-takerai",
+   "L1-b-5": "bella-hertzke",
+   "L1-a-4": "dane-takerai",
+   "L1-b-4": "peter-watkins"
   },
   "locked": {
    "alesi-hertzke": true,
