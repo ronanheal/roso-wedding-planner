@@ -2944,7 +2944,6 @@
    "L3-a-6": "barbra-nouata",
    "L3-a-7": "ryan-hawke",
    "L3-a-8": "aleshia-hawke",
-   "L4-b-3": "boston-malatai",
    "L3-a-4": "nigel-hingston",
    "L3-a-3": "paul-nouata",
    "L3-b-3": "kat-nouata",
@@ -2959,7 +2958,6 @@
    "L3-b-10": "lee",
    "L3-b-11": "james-hingston",
    "L3-a-11": "artemis-hingston",
-   "L4-b-4": "finn-gardiner",
    "L4-a-5": "rory-gardiner",
    "L1-a-11": "harry-kidman",
    "L1-b-11": "flynn-james",
@@ -3002,7 +3000,9 @@
    "L4-b-9": "siena-frost",
    "L4-b-8": "george-frost",
    "L4-a-9": "mila-warwick",
-   "L4-a-8": "scarlett-warwick"
+   "L4-a-8": "scarlett-warwick",
+   "L4-b-7": "boston-malatai",
+   "L4-b-6": "finn-gardiner"
   },
   "locked": {
    "alesi-hertzke": true,
