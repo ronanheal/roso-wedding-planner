@@ -2844,8 +2844,6 @@
    "L4-a-11": "lorne-frost",
    "L2-a-3": "margot-carney",
    "L2-a-10": "shalese-hertzke",
-   "L2-b-10": "nicola-thomas",
-   "L2-b-11": "greg-thomas",
    "L2-a-11": "rudi-hertzke",
    "L4-b-5": "louise-peat",
    "L4-b-6": "andrew-peat",
@@ -2874,7 +2872,9 @@
    "L1-a-3": "maddison-salmon",
    "L2-a-9": "ali-crockpot",
    "L2-a-5": "jacqueline-bennett",
-   "L2-a-6": "lynn-mckenzie"
+   "L2-a-6": "lynn-mckenzie",
+   "L2-b-5": "greg-thomas",
+   "L2-b-6": "nicola-thomas"
   },
   "locked": {
    "alesi-hertzke": true,
