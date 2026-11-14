@@ -2753,8 +2753,6 @@
    "L1-b-5": "bj-peat",
    "L1-a-4": "flynn-james",
    "L1-b-4": "harry-kidman",
-   "L1-a-3": "bruno-quinn",
-   "L1-b-3": "ali-crockpot",
    "L1-b-6": "devon-peat",
    "L2-b-6": "christen-salmon",
    "L2-a-6": "steve-anderson",
@@ -2767,7 +2765,9 @@
    "L1-a-0": "jesse-salmon",
    "L1-b-0": "lucca-smith",
    "L1-a-1": "liam-salmon",
-   "L1-b-1": "maddison-salmon"
+   "L1-b-1": "maddison-salmon",
+   "L1-a-2": "bruno-quinn",
+   "L1-b-2": "ali-crockpot"
   },
   "locked": {
    "alesi-hertzke": true,
