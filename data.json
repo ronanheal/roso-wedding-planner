@@ -2983,8 +2983,7 @@
    "L4-a-5": "maddison-smith",
    "L4-a-3": "aleshia-hawke",
    "L4-a-2": "ryan-hawke",
-   "L4-a-0": "paul-nouata",
-   "L4-a-1": "kat-nouata",
+   "L4-a-1": "paul-nouata",
    "L3-a-3": "erin-gardiner",
    "L3-a-4": "amiee-gardiner",
    "L3-b-3": "coralie-hingston",
@@ -3002,7 +3001,8 @@
    "L3-a-7": "ben-muvae",
    "L3-a-6": "vanessa-muvae",
    "L3-b-6": "andrew-peat",
-   "L3-b-5": "louise-peat"
+   "L3-b-5": "louise-peat",
+   "L4-a-0": "kat-nouata"
   },
   "locked": {
    "alesi-hertzke": true,
