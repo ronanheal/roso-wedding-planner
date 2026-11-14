@@ -2719,7 +2719,6 @@
    "L1-a-5": "peter-watkins",
    "L1-a-3": "maddison-salmon",
    "L1-a-2": "lucca-smith",
-   "L1-a-1": "jesse-salmon",
    "L4-b-4": "bj-peat",
    "L4-b-5": "devon-peat",
    "L4-b-6": "artemis-hingston",
@@ -2756,7 +2755,8 @@
    "L1-a-9": "bella-hertzke",
    "L1-a-10": "emma-hertzke",
    "L1-a-4": "ali-crockpot",
-   "L2-a-7": "liam-salmon"
+   "L2-a-7": "liam-salmon",
+   "L2-b-7": "jesse-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
