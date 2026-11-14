@@ -2754,10 +2754,7 @@
    "L1-a-4": "flynn-james",
    "L1-b-4": "harry-kidman",
    "L1-a-3": "bruno-quinn",
-   "L1-a-2": "liam-salmon",
    "L1-b-3": "ali-crockpot",
-   "L1-b-2": "maddison-salmon",
-   "L1-b-1": "lucca-smith",
    "L1-b-6": "devon-peat",
    "L2-b-6": "christen-salmon",
    "L2-a-6": "steve-anderson",
@@ -2767,7 +2764,10 @@
    "L2-b-11": "rudi-hertzke",
    "L2-a-9": "lynn-mckenzie",
    "L2-b-9": "jacqueline-bennett",
-   "L1-a-0": "jesse-salmon"
+   "L1-a-0": "jesse-salmon",
+   "L1-b-0": "lucca-smith",
+   "L1-a-1": "liam-salmon",
+   "L1-b-1": "maddison-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
