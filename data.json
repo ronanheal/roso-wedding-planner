@@ -2857,8 +2857,6 @@
    "L1-a-9": "devon-peat",
    "L1-b-9": "savannah-gillbanks",
    "L1-a-5": "peter-watkins",
-   "L1-b-0": "tim-heal",
-   "L1-b-1": "christen-salmon",
    "L1-b-3": "liam-salmon",
    "L1-b-2": "jesse-salmon",
    "L1-b-4": "bruno-quinn",
@@ -2872,7 +2870,9 @@
    "L2-a-9": "lynn-mckenzie",
    "L2-b-9": "jacqueline-bennett",
    "L2-a-4": "jessica-salmon",
-   "L2-a-5": "steve-anderson"
+   "L2-a-5": "steve-anderson",
+   "L2-b-4": "tim-heal",
+   "L2-b-5": "christen-salmon"
   },
   "locked": {
    "alesi-hertzke": true,
