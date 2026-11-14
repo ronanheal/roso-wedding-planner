@@ -2744,9 +2744,6 @@
    "L3-b-8": "peter-nouata",
    "L3-b-7": "debbie-nouata",
    "L3-b-9": "sean-hurndell",
-   "L1-b-0": "luca-ensor",
-   "L1-b-1": "james-pope",
-   "L1-b-2": "billy-mcfadyen",
    "L1-a-8": "emma-mahoney",
    "L1-a-4": "ali-crockpot",
    "L3-b-10": "rory-gardiner",
@@ -2757,7 +2754,10 @@
    "L1-b-7": "hunter-gillbanks",
    "L1-b-6": "savannah-gillbanks",
    "L1-b-5": "porsche-commons",
-   "L1-b-4": "kyrah-mcfadyen"
+   "L1-b-4": "kyrah-mcfadyen",
+   "L1-b-3": "billy-mcfadyen",
+   "L1-b-2": "james-pope",
+   "L1-b-1": "luca-ensor"
   },
   "locked": {
    "alesi-hertzke": true,
