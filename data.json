@@ -2721,14 +2721,6 @@
    "L3-b-6": "kim-hurndell",
    "L3-b-8": "peter-nouata",
    "L3-b-7": "debbie-nouata",
-   "L1-a-8": "emma-mahoney",
-   "L1-b-10": "marcus-hertzke",
-   "L1-b-9": "cassidy-frost",
-   "L1-b-8": "judah-frost",
-   "L1-b-7": "hunter-gillbanks",
-   "L1-b-6": "savannah-gillbanks",
-   "L1-a-9": "bella-hertzke",
-   "L1-a-10": "emma-hertzke",
    "L2-b-7": "liam-salmon",
    "L2-b-8": "jesse-salmon",
    "L2-a-8": "lucca-smith",
@@ -2757,9 +2749,7 @@
    "L4-b-9": "sam-clark",
    "L4-a-8": "sharn-charmers",
    "L4-a-10": "cheryl-frost",
-   "L4-a-11": "lorne-frost",
-   "L1-b-11": "samuel-peez",
-   "L1-a-11": "ali-crockpot"
+   "L4-a-11": "lorne-frost"
   },
   "locked": {
    "alesi-hertzke": true,
