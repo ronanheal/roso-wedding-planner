@@ -2731,8 +2731,6 @@
    "L1-b-6": "judah-frost",
    "L1-b-5": "porsche-commons",
    "L1-b-4": "kyrah-mcfadyen",
-   "L1-b-3": "billy-mcfadyen",
-   "L1-b-2": "james-pope",
    "L1-a-3": "maddison-salmon",
    "L1-a-2": "lucca-smith",
    "L1-a-1": "jesse-salmon",
@@ -2770,7 +2768,9 @@
    "L4-a-10": "cheryl-frost",
    "L4-a-11": "lorne-frost",
    "L4-b-11": "keith-proctor",
-   "L1-b-0": "luca-ensor"
+   "L1-b-0": "luca-ensor",
+   "L1-b-1": "james-pope",
+   "L1-b-2": "billy-mcfadyen"
   },
   "locked": {
    "alesi-hertzke": true,
