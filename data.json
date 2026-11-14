@@ -2843,7 +2843,6 @@
    "L4-a-10": "cheryl-frost",
    "L4-a-11": "lorne-frost",
    "L2-a-3": "margot-carney",
-   "L2-a-6": "steve-anderson",
    "L2-a-9": "jacqueline-bennett",
    "L2-b-9": "lynn-mckenzie",
    "L2-a-10": "shalese-hertzke",
@@ -2870,7 +2869,8 @@
    "L1-b-0": "tim-heal",
    "L1-b-1": "christen-salmon",
    "L1-b-2": "liam-salmon",
-   "L1-a-0": "jessica-salmon"
+   "L1-a-0": "jessica-salmon",
+   "L1-a-1": "steve-anderson"
   },
   "locked": {
    "alesi-hertzke": true,
