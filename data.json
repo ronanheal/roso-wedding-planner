@@ -2940,7 +2940,6 @@
    "L3-b-1": "john-warwick",
    "L3-b-2": "kara-warwick",
    "B-2": "georgia-heal",
-   "L3-b-4": "erin-gardiner",
    "L3-b-5": "amiee-gardiner",
    "L1-a-11": "harry-kidman",
    "L1-b-11": "flynn-james",
@@ -3002,7 +3001,8 @@
    "L4-a-0": "paul-nouata",
    "L4-a-1": "kat-nouata",
    "L3-a-4": "coralie-hingston",
-   "L3-a-5": "nigel-hingston"
+   "L3-a-5": "nigel-hingston",
+   "L3-a-3": "erin-gardiner"
   },
   "locked": {
    "alesi-hertzke": true,
