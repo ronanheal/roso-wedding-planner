@@ -2974,7 +2974,6 @@
    "L1-a-2": "lucca-smith",
    "L1-a-1": "jesse-salmon",
    "L1-b-0": "luca-ensor",
-   "L4-b-4": "bj-peat",
    "L4-b-5": "devon-peat",
    "L4-b-6": "artemis-hingston",
    "L4-b-7": "lee",
@@ -3011,7 +3010,8 @@
    "L1-b-4": "porsche-commons",
    "L1-b-5": "savannah-gillbanks",
    "L1-a-11": "harry-kidman",
-   "L1-b-11": "flynn-james"
+   "L1-b-11": "flynn-james",
+   "L4-b-0": "bj-peat"
   },
   "locked": {
    "alesi-hertzke": true,
