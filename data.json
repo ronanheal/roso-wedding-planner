@@ -2855,8 +2855,6 @@
    "L2-b-10": "nicola-thomas",
    "L2-b-11": "greg-thomas",
    "L2-a-11": "rudi-hertzke",
-   "L1-a-11": "harry-kidman",
-   "L1-b-11": "flynn-james",
    "L4-b-5": "louise-peat",
    "L4-b-6": "andrew-peat",
    "L4-a-6": "vanessa-muvae",
@@ -2867,7 +2865,9 @@
    "L1-a-8": "devon-peat",
    "L1-b-8": "savannah-gillbanks",
    "L1-a-9": "bj-peat",
-   "L1-b-9": "hunter-gillbanks"
+   "L1-b-9": "hunter-gillbanks",
+   "L1-a-10": "harry-kidman",
+   "L1-b-10": "flynn-james"
   },
   "locked": {
    "alesi-hertzke": true,
