@@ -2762,12 +2762,11 @@
    "L4-b-1": "siena-frost",
    "L4-b-0": "keira-freeson",
    "L4-b-2": "george-frost",
-   "L3-b-4": "amiee-gardiner",
+   "L3-b-4": "peter-nouata",
    "L3-a-5": "coralie-hingston",
    "L2-a-5": "jessica-salmon",
    "L2-a-9": "jacqueline-bennett",
    "B-2": "georgia-heal",
-   "L3-b-7": "peter-nouata",
    "L3-a-6": "barbra-nouata",
    "L3-a-7": "ryan-hawke",
    "L3-a-8": "aleshia-hawke",
@@ -2818,7 +2817,8 @@
    "L3-b-8": "kim-hurndell",
    "L3-a-3": "paul-nouata",
    "L3-b-5": "erin-gardiner",
-   "L3-b-3": "kat-nouata"
+   "L3-b-3": "kat-nouata",
+   "L3-b-6": "amiee-gardiner"
   },
   "locked": {
    "alesi-hertzke": true,
