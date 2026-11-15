@@ -3860,14 +3860,12 @@
    "L3-a-6": "barbra-nouata",
    "L3-a-7": "ryan-hawke",
    "L3-a-8": "aleshia-hawke",
-   "L1-a-10": "samuel-peez",
    "L1-a-9": "bella-hertzke",
    "L1-a-8": "emma-mahoney",
    "L1-a-7": "tessa-takerai",
    "L1-a-6": "dane-takerai",
    "L1-a-5": "peter-watkins",
    "L1-a-4": "ali-crockpot",
-   "L1-b-10": "marcus-hertzke",
    "L1-b-9": "emma-hertzke",
    "L1-b-8": "cassidy-frost",
    "L1-b-7": "judah-frost",
@@ -3902,7 +3900,6 @@
    "L1-b-3": "kyrah-mcfadyen",
    "L1-b-4": "porsche-commons",
    "L1-b-5": "savannah-gillbanks",
-   "L1-b-11": "flynn-james",
    "L4-b-4": "bj-peat",
    "L4-a-1": "mila-warwick",
    "L4-a-2": "scarlett-warwick",
@@ -3927,7 +3924,9 @@
    "L4-b-11": "keith-proctor",
    "L1-b-1": "luca-ensor",
    "L2-b-10": "shalese-hertzke",
-   "L2-b-11": "rudi-hertzke"
+   "L2-b-11": "rudi-hertzke",
+   "L1-b-11": "marcus-hertzke",
+   "L1-a-11": "samuel-peez"
   },
   "locked": {
    "alesi-hertzke": true,
