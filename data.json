@@ -4006,7 +4006,6 @@
    "L2-a-5": "jessica-salmon",
    "L2-a-9": "jacqueline-bennett",
    "B-2": "georgia-heal",
-   "L3-a-6": "barbra-nouata",
    "L3-a-8": "peter-nouata",
    "L1-a-5": "peter-watkins",
    "L1-a-4": "ali-crockpot",
@@ -4076,7 +4075,8 @@
    "L3-b-8": "aleshia-hawke",
    "L3-a-7": "kim-hurndell",
    "L3-b-3": "kara-warwick",
-   "L3-b-2": "john-warwick"
+   "L3-b-2": "john-warwick",
+   "L3-b-1": "barbra-nouata"
   },
   "locked": {
    "alesi-hertzke": true,
