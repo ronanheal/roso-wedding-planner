@@ -4002,8 +4002,6 @@
    "L2-b-9": "lynn-mckenzie",
    "L2-a-11": "greg-thomas",
    "L2-a-10": "nicola-thomas",
-   "L3-b-1": "john-warwick",
-   "L3-b-2": "kara-warwick",
    "L3-a-5": "coralie-hingston",
    "L2-a-5": "jessica-salmon",
    "L2-a-9": "jacqueline-bennett",
@@ -4076,7 +4074,9 @@
    "L3-b-11": "sharn-charmers",
    "L3-a-9": "debbie-nouata",
    "L3-b-8": "aleshia-hawke",
-   "L3-a-7": "kim-hurndell"
+   "L3-a-7": "kim-hurndell",
+   "L3-b-3": "kara-warwick",
+   "L3-b-2": "john-warwick"
   },
   "locked": {
    "alesi-hertzke": true,
