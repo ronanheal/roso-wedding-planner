@@ -3862,8 +3862,6 @@
    "L3-a-6": "barbra-nouata",
    "L3-a-7": "ryan-hawke",
    "L3-a-8": "aleshia-hawke",
-   "L1-a-7": "tessa-takerai",
-   "L1-a-6": "dane-takerai",
    "L1-a-5": "peter-watkins",
    "L1-a-4": "ali-crockpot",
    "L1-b-6": "hunter-gillbanks",
@@ -3921,7 +3919,9 @@
    "L4-a-11": "troy-freeson",
    "L4-b-11": "keith-proctor",
    "L1-b-7": "flynn-james",
-   "L1-a-9": "emma-mahoney"
+   "L1-a-9": "emma-mahoney",
+   "L1-a-8": "tessa-takerai",
+   "L1-a-7": "dane-takerai"
   },
   "locked": {
    "alesi-hertzke": true,
