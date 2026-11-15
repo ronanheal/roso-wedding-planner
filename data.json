@@ -3917,7 +3917,6 @@
    "L4-a-11": "troy-freeson",
    "L4-b-11": "keith-proctor",
    "L1-b-7": "flynn-james",
-   "L1-a-9": "emma-mahoney",
    "L1-a-8": "tessa-takerai",
    "L1-a-7": "dane-takerai",
    "L1-a-6": "harry-kidman",
@@ -3926,7 +3925,8 @@
    "L1-b-1": "luca-ensor",
    "L1-b-8": "samuel-peez",
    "L1-b-10": "judah-frost",
-   "L1-b-9": "marcus-hertzke"
+   "L1-b-9": "marcus-hertzke",
+   "L1-a-11": "emma-mahoney"
   },
   "locked": {
    "alesi-hertzke": true,
