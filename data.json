@@ -4203,7 +4203,6 @@
    "L1-a-11": "samuel-peez",
    "L1-a-10": "bella-hertzke",
    "L1-b-10": "emma-hertzke",
-   "L1-b-9": "louise-peat",
    "L1-b-8": "judah-frost",
    "L1-a-9": "emma-mahoney",
    "L1-a-8": "tessa-takerai",
@@ -4230,7 +4229,8 @@
    "L3-b-6": "sean-hurndell",
    "L3-b-4": "amiee-gardiner",
    "L3-b-3": "john-warwick",
-   "L2-a-8": "cassidy-frost"
+   "L2-a-8": "louise-peat",
+   "L1-b-9": "cassidy-frost"
   },
   "locked": {
    "alesi-hertzke": true,
